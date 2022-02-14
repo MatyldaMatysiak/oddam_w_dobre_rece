@@ -1,0 +1,9 @@
+.loginRegisterBox {
+  font-size: 0.875rem;
+  color: $color-border;
+  text-align: end;
+
+  a:not(:last-child) {
+    margin-right: $space-base;
+  }
+}

@@ -1,0 +1,16 @@
+.btn {
+  padding: 0.4em 1em;
+  color: $color-text;
+}
+
+.btn-active {
+  border: 1px solid $color-border;
+}
+
+.btn-yellow {
+  border-color: $color-yellow;
+}
+
+.btn-big {
+  font-weight: 300;
+}

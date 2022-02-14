@@ -1,0 +1,7 @@
+.mainNav {
+  text-align: end;
+
+  a:not(:last-child) {
+    margin-right: $space-base;
+  }
+}
