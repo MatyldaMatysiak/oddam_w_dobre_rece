@@ -1,0 +1,48 @@
+.headerContainer {
+  //background-image: url("../assets/Hero Image@2x.png");
+  display: flex;
+  justify-content: right;
+  position: relative;
+  width: 100%;
+
+  .navBox {
+    position: absolute;
+    right: 0;
+    margin: $space-base*2 $space-base*4;
+    z-index: 10;
+  }
+
+  .heroContainer {
+    display: flex;
+
+    .heroImage {
+      width: 30%;
+    }
+  }
+
+  .header__info {
+    text-align: center;
+    padding: $space-base*25 $space-base*15 $space-base*15;
+
+    a:not(:last-child) {
+      margin-right: 5%;
+    }
+
+    .welcome-text {
+      font-size: 2.375rem;
+      font-weight: 400;
+      margin-bottom: $space-base*2;
+    }
+
+    .separator {
+      margin: 0 auto $space-base*5;
+    }
+
+    button {
+      width: 45%;
+    }
+  }
+
+}
+
+
