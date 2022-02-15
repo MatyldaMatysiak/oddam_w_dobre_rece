@@ -1,9 +1,7 @@
 .headerContainer {
   //background-image: url("../assets/Hero Image@2x.png");
-  display: flex;
-  justify-content: right;
-  position: relative;
-  width: 100%;
+  text-align: end;
+  width: 100vw;
 
   .navBox {
     position: absolute;
@@ -14,15 +12,15 @@
 
   .heroContainer {
     display: flex;
-
-    .heroImage {
-      width: 30%;
-    }
+    justify-content: end;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right 900px bottom;
   }
 
   .header__info {
     text-align: center;
-    padding: $space-base*25 $space-base*15 $space-base*15;
+    padding: $space-base*25 $space-base*15 $space-base*20;
 
     a:not(:last-child) {
       margin-right: 5%;
