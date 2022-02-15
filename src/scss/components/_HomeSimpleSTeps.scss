@@ -1,0 +1,52 @@
+.simpleSteps {
+  margin: 4% 0;
+  text-align: center;
+
+  .simpleSteps__title {
+    font-size: 2.376rem;
+  }
+
+  .separator {
+    margin: $space-base*2 auto;
+  }
+
+  .simpleSteps__fourSteps {
+    display: flex;
+    justify-content: center;
+    background-color: $color-bg;
+    padding: 3%;
+    margin-bottom: $space-base*3;
+
+    .fourSteps__step {
+      text-align: center;
+      width: 10%;
+
+      &:not(:last-child) {
+        margin-right: 7%;
+      }
+
+      .step__icon {
+        margin: 0 auto $space-base;
+
+      }
+
+      .step__title {
+        font-size: 1.125rem;
+
+        &::after {
+          display: block;
+          content: "";
+          height: 1px;
+          background-color: #707070;
+          width: 40%;
+          margin: $space-base auto;
+        }
+      }
+    }
+
+  }
+
+  button {
+    width: 18%;
+  }
+}

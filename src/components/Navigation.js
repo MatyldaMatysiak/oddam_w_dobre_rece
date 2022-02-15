@@ -4,7 +4,7 @@ import {Link} from "react-scroll";
 export default function Navigation() {
     return (
         <nav className="mainNav">
-            <Link to="#">
+            <Link to="simpleSteps" duration={500}>
                 <button className="btn btn-active">Start</button>
             </Link>
             <Link to="#">
