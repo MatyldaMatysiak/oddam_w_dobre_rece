@@ -3,6 +3,7 @@ import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
 import HomeSimpleSteps from "./HomeSimpleSteps";
 import HomeAbout from "./HomeAbout";
+import HomeWhoWeHelp from "./HomeWhoWeHelp";
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
             <HomeThreeColumns/>
             <HomeSimpleSteps/>
             <HomeAbout/>
+            <HomeWhoWeHelp/>
         </>
     )
 }
