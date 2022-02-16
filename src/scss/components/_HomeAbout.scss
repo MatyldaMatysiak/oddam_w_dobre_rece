@@ -1,0 +1,39 @@
+.aboutUs {
+  display: flex;
+
+  .about-column {
+    width: 50%;
+  }
+
+  .aboutUs__aboutText {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10% 8%;
+    background-color: $color-bg;
+
+    .aboutText__title {
+      font-size: 2.375rem;
+    }
+
+    .separator {
+      margin: $space-base*2 auto $space-base*4;
+    }
+
+    .aboutText__description {
+      font-size: 1.875rem;
+      line-height: 1.8;
+      margin-bottom: $space-base*2;
+    }
+
+    .aboutText__signature {
+      align-self: end;
+    }
+  }
+
+  .aboutUs__aboutImage {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left -150px bottom;
+  }
+}
