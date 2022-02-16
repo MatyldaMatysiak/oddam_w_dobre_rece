@@ -10,7 +10,7 @@ export default function Navigation() {
             <Link to="simpleSteps" duration={500}>
                 <button className="btn">O co chodzi?</button>
             </Link>
-            <Link to="#">
+            <Link to="aboutUs" duration={500}>
                 <button className="btn">O nas</button>
             </Link>
             <Link to="#">
