@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import OrganizationsVerse from "./OrganizationsVerse";
 
 export default function WhoWeHelpDisplay({ institutions }) {
 
@@ -13,12 +14,20 @@ export default function WhoWeHelpDisplay({ institutions }) {
         } else {
             startNumber = rowsNumber*Number(e.target.innerText - 1);
         }
-        setPageSet([institutions[startNumber], institutions[startNumber + 1], institutions[startNumber + 2]]);
+
+        let newSet = [];
+        for (let i = 0; i < rowsNumber; i++) {
+            if (startNumber + i > institutions.length - 1) {
+                break;
+            } else {
+                newSet.push(institutions[startNumber + i])
+            }
+        }
+        setPageSet([...newSet]);
 
         const pageButtons = document.querySelectorAll(".pageNumbers button")
         pageButtons.forEach(button => button.classList.remove("btn-active"))
         const activeButton = e.target
-
         activeButton.classList.add("btn-active");
     }
 
@@ -42,27 +51,7 @@ export default function WhoWeHelpDisplay({ institutions }) {
     return (
         <>
             <div className="helpPage">
-                <div className="helpPage__organisation">
-                    <div className="organisation__description">
-                        <h4 className="description__title">{pageSet[0].name}</h4>
-                        <p className="description__text">{pageSet[0].goal}</p>
-                    </div>
-                    <p className="organisation__thingsToGather">{pageSet[0].items}</p>
-                </div>
-                <div className="helpPage__organisation">
-                    <div className="organisation__description">
-                        <h4 className="description__title">{pageSet[1].name}</h4>
-                        <p className="description__text">{pageSet[1].goal}</p>
-                    </div>
-                    <p className="organisation__thingsToGather">{pageSet[1].items}</p>
-                </div>
-                <div className="helpPage__organisation">
-                    <div className="organisation__description">
-                        <h4 className="description__title">{pageSet[2].name}</h4>
-                        <p className="description__text">{pageSet[2].goal}</p>
-                    </div>
-                    <p className="organisation__thingsToGather">{pageSet[2].items}</p>
-                </div>
+                {pageSet.map(verse => <OrganizationsVerse verse={verse} key={verse.name}/>)}
             </div>
 
             <div className="pageNumbers">
