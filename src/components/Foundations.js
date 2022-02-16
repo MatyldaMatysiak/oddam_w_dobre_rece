@@ -46,7 +46,13 @@ const foundations = [
         name: 'Fundacja 9',
         goal: 'Cel i misja:',
         items: 'ubrania, jedzenie, ciepłe koce'
-    }
+    },
+    // {
+    //     name: 'Fundacja 10',
+    //     goal: 'Cel i misja:',
+    //     items: 'ubrania, jedzenie, ciepłe koce'
+    // }
+
 ]
 
 export default function Foundations() {
