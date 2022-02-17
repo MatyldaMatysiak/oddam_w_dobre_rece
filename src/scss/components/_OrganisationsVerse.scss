@@ -1,0 +1,35 @@
+.helpPage__organisation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $font-alt;
+
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $color-border;
+    margin-bottom: $space-base*2;
+    padding-bottom: $space-base*2;
+  }
+
+  .organisation__description {
+    text-align: start;
+    margin-right: $space-base*2;
+
+    .description__title {
+      font-size: 1.625rem;
+      font-weight: 300;
+    }
+
+    .description__text {
+      font-size: 1.125rem;
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+
+  .organisation__thingsToGather {
+    font-size: 1.125rem;
+    font-weight: 300;
+    text-align: end;
+  }
+}
