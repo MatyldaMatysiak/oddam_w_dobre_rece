@@ -10,6 +10,11 @@
     margin: $space-base*10 auto;
     align-items: center;
 
+    button {
+      font-size: 1.125rem;
+      font-weight: 300;
+    }
+
     .form__title {
       font-size: 2.5rem;
       margin-bottom: $space-base*2;
@@ -41,6 +46,5 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      font-size: 1.125rem;
     }
   }
