@@ -1,0 +1,84 @@
+.contact {
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 10% 7% 0;
+
+  .contact__form {
+    min-width: 35%;
+    text-align: end;
+
+    .form__title {
+      font-size: 2.375rem;
+      padding: 0 5% $space-base*2;
+      text-align: center;
+    }
+
+    .separator {
+      margin: 0 auto $space-base*4;
+    }
+
+    .form__personalData {
+      display: flex;
+      margin-bottom: $space-base*3;
+      width: 100%;
+
+      .personalData {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        width: 100%;
+
+        input {
+          width: 100%;
+        }
+      }
+
+      .personalData:not(:last-child) {
+        margin-right: $space-base*1.5;
+      }
+    }
+
+    .form__message {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      width: 100%;
+      margin-bottom: $space-base*3;
+    }
+
+  }
+
+  .contact__footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: $space-base*4 0 $space-base*1;
+    margin-top: 15%;
+
+    .footer__copyrightContainer {
+      width: 50%;
+      display: flex;
+      justify-content: end;
+
+      .footer__copyright {
+        transform: translateX(50%);
+        font-size: 1.125rem;
+      }
+    }
+    .footer__socialMedia {
+      display: flex;
+
+      .socialMedia__icon {
+        cursor: pointer;
+      }
+
+     .socialMedia__icon:not(:last-child) {
+        margin-right: $space-base*1.5;
+      }
+
+    }
+  }
+}

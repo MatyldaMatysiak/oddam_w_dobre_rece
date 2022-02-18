@@ -16,7 +16,7 @@ export default function Navigation() {
             <Link to="whoWeHelp" duration={500}>
                 <button className="btn">Fundacja i organizacje</button>
             </Link>
-            <Link to="#">
+            <Link to="contact" duration={500}>
                 <button className="btn">Kontakt</button>
             </Link>
         </nav>

@@ -4,6 +4,7 @@ import HomeThreeColumns from "./HomeThreeColumns";
 import HomeSimpleSteps from "./HomeSimpleSteps";
 import HomeAbout from "./HomeAbout";
 import HomeWhoWeHelp from "./HomeWhoWeHelp";
+import HomeContact from "./HomeContact";
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
             <HomeSimpleSteps/>
             <HomeAbout/>
             <HomeWhoWeHelp/>
+            <HomeContact/>
         </>
     )
 }

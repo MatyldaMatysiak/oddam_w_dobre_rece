@@ -1,0 +1,27 @@
+form {
+  label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: $space-base;
+  }
+
+  input,
+  textarea {
+    border: none;
+    border-bottom: 1px solid $color-border;
+    background: none;
+    padding: 0 0 3px 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #3C3C3C26;
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+}

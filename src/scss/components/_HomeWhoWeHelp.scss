@@ -13,6 +13,7 @@
   .whoWeHelp__navigation {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: $space-base*5;
 
