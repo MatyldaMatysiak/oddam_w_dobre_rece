@@ -1,0 +1,49 @@
+.login {
+
+
+  .login__navBox {
+    margin: $space-base*2 $space-base*4;
+  }
+
+  .login__form {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: $space-base*10 auto;
+    align-items: center;
+
+    .form__title {
+      font-size: 2.5rem;
+      margin-bottom: $space-base*2;
+      text-align: center;
+    }
+
+    .separator {
+      margin-bottom: $space-base*4;
+    }
+
+    .form__inputs {
+      width: 80%;
+      background-color: $color-bg;
+      padding: 7% 10%;
+      margin-bottom: $space-base*3;
+
+      .inputs {
+        display: flex;
+        flex-direction: column;
+
+        &:not(:last-child) {
+          margin-bottom: $space-base*3;
+        }
+
+      }
+    }
+
+    .form__buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 1.125rem;
+    }
+  }
+}
