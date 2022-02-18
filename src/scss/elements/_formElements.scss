@@ -12,6 +12,10 @@ form {
     background: none;
     padding: 0 0 3px 0;
 
+    &.invalid {
+      border-bottom: 1px solid red;
+    }
+
     &:focus {
       outline: none;
     }
