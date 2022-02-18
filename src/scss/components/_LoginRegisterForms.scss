@@ -1,11 +1,9 @@
-.login {
 
-
-  .login__navBox {
+  .loginRegister__navBox {
     margin: $space-base*2 $space-base*4;
   }
 
-  .login__form {
+  .loginRegister__form {
     display: flex;
     flex-direction: column;
     width: 35%;
@@ -46,4 +44,3 @@
       font-size: 1.125rem;
     }
   }
-}

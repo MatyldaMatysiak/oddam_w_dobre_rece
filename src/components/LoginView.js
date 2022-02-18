@@ -6,11 +6,11 @@ import separator from "../assets/Decoration.svg"
 export default function LoginView() {
     return (
         <section className="login">
-            <div className="login__navBox">
+            <div className="loginRegister__navBox">
                 <LoginRegister/>
                 <Navigation/>
             </div>
-            <form className="login__form">
+            <form className="loginRegister__form">
                 <h2 className="form__title">Zaloguj się</h2>
                 <img src={separator} alt="separator" className="separator"/>
                 <div className="form__inputs">
