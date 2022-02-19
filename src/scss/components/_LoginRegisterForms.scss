@@ -28,7 +28,7 @@
     .form__inputs {
       width: 80%;
       background-color: $color-bg;
-      padding: 7% 10%;
+      padding: 7% 10% 3%;
       margin-bottom: $space-base*3;
 
       .inputs {
@@ -36,9 +36,19 @@
         flex-direction: column;
 
         &:not(:last-child) {
-          margin-bottom: $space-base*3;
+          margin-bottom: $space-base;
         }
 
+        .error-message {
+          color: red;
+          margin-top: $space-base/5;
+          font-size: 0.8rem;
+          visibility: hidden;
+
+          &.visible {
+            visibility: visible;
+          }
+        }
       }
     }
 

@@ -60,7 +60,7 @@ export default function HomeContact() {
                     <div className="personalData__email personalData">
                         <label htmlFor="email">Wpisz swój email</label>
                         <input type="text" name="email" id="email" className={`${validation.includes('invalidEmail') ? 'invalid' : 'valid'}`} placeholder="abc@xyz.pl" onChange={(e) => setEmail(e.target.value)} value={email}/>
-                        {validation.includes('invalidEmail') ? <p className="error-message">Podane email jest nieprawidłowy!</p> : <></>}
+                        {validation.includes('invalidEmail') ? <p className="error-message">Podany email jest nieprawidłowy!</p> : <></>}
                     </div>
                 </div>
                 <div className="form__message">
