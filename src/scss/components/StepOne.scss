@@ -1,0 +1,55 @@
+.stepOne {
+  padding: $space-base*3 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .stepNumber {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: $space-base*5;
+  }
+
+  .form__title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: $space-base*2;
+  }
+
+  .form__option {
+    margin: $space-base*3 0;
+    display: flex;
+    align-items: center;
+
+    .form__label {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-left: $space-base*2;
+      margin-bottom: 0;
+    }
+
+    input[type="radio"] {
+      appearance: none;
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid $color-border;
+      cursor: pointer;
+      margin: 0;
+
+      &:checked {
+        background-color: $color-yellow;
+      }
+    }
+  }
+
+  .buttonBox {
+
+    .btn-form {
+      font-size: 1.5rem;
+      font-weight: 300;
+      width: 12%;
+      padding: 1rem 1rem;
+      min-width: fit-content;
+    }
+  }
+}
