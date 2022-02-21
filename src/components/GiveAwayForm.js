@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Route, Routes} from "react-router-dom";
 import StepOne from "./StepOne";
 import bg from "../assets/Background-Form.jpg"
@@ -6,6 +6,9 @@ import StepTwo from "./StepTwo";
 
 export default function GiveAwayForm() {
 
+    const [stepOne, setStepOne] = useState("");
+    const [stepTwo, setStepTwo] = useState(0);
+    const [stepFour, setStepFour] = useState({})
 
     return (
         <>
@@ -15,6 +18,7 @@ export default function GiveAwayForm() {
                     <Route path="krok-2" element={ <StepTwo bg={bg}/> } />
                     <Route path="krok-3" element={ <StepOne /> } />
                     <Route path="krok-4" element={ <StepOne /> } />
+                    <Route path="podsumowanie" element={ <StepOne /> } />
                 </Routes>
             </section>
         </>
