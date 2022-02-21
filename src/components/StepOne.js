@@ -9,7 +9,7 @@ export default function StepOne({bg}) {
     return (
         <>
             <StepsHeader description={description} />
-            <main className="giveAwayFormBg stepOne" style={{ backgroundImage: `url(${bg})` }}>
+            <main className="giveAwayFormBg step" style={{ backgroundImage: `url(${bg})` }}>
                 <form className="stepOne__form">
                     <p className="stepNumber">1/4</p>
                     <h2 className="form__title">Zaznacz co chcesz oddać:</h2>
