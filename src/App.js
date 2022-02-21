@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import LoginView from "./components/LoginView";
 import SignUpView from "./components/SignUpView";
 import Logout from "./components/Logout";
+import GiveAwayThings from "./components/GiveAwayThings";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <Route path="/logowanie" element={ <LoginView /> } />
             <Route path="/rejestracja" element={ <SignUpView /> } />
             <Route path="/wylogowano" element={ <Logout /> } />
+            <Route path="/oddaj-rzeczy/*" element={ <GiveAwayThings /> } />
         </Routes>
     </Router>
   );
