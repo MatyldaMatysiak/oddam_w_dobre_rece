@@ -4,12 +4,12 @@ import {Link} from "react-router-dom";
 import arrowDown from "../assets/Icon-Arrow-Down.svg";
 import arrowUp from "../assets/Icon-Arrow-Up.svg";
 
-export default function StepTwo({bg}) {
+export default function StepTwo({bg, setStepTwo, stepTwo}) {
 
     const [description] = useState("Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ.")
     const [imgSrc, setImgSrc] = useState(arrowDown)
     const [options, setOptions] = useState("hide")
-    const [selectValue, setSelectValue] = useState("--wybierz--")
+    const [selectValue, setSelectValue] = useState(stepTwo)
 
     const handleShowSelect = () => {
         if (options === "hide") {
@@ -26,6 +26,7 @@ export default function StepTwo({bg}) {
         setSelectValue(e.target.innerText);
         setOptions("hide");
         setImgSrc(arrowDown);
+        setStepTwo(e.target.innerText)
     }
 
     return (
