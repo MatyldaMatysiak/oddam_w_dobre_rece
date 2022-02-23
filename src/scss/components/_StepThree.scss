@@ -1,0 +1,67 @@
+.stepThree__form {
+
+  .stepThree__select {
+    margin-top: $space-base*2;
+
+    .select__optionsThree {
+      background-color: #ececec;
+      z-index: 10;
+    }
+  }
+
+  .form__checkbox {
+    margin-top: $space-base*3;
+    margin-bottom: $space-base*2;
+    font-size: 1.5rem;
+
+    .checkbox__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: $space-base*2;
+    }
+
+    .checkbox__options {
+      display: flex;
+      flex-wrap: wrap;
+      width: 50%;
+
+      .options__option {
+        border: 1px solid $color-border;
+        padding: $space-base $space-base*1.5;
+        margin-bottom: $space-base*2;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: stretch;
+
+        &:not(:last-child) {
+          margin-right: $space-base*2;
+
+        }
+
+        &.option-yellow {
+          background-color: $color-yellow;
+        }
+      }
+    }
+  }
+
+  .form__organizationName {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    font-size: 1.5rem;
+    margin-bottom: $space-base*7;
+
+    .organizationName__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: $space-base*2;
+    }
+
+    .organizationName {
+      border: 1px solid $color-border;
+      padding: 2px;
+    }
+  }
+}

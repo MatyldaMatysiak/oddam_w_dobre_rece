@@ -49,8 +49,6 @@ export default function StepTwo({bg, setStepTwo, stepTwo}) {
                                 <p className="options_option" onClick={handleChooseOption}>5</p>
                             </div> : <></>}
                         </div>
-
-
                     </div>
                 </form>
                 <div className="buttonBox">

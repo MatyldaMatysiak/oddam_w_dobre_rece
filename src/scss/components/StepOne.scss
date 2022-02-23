@@ -16,7 +16,9 @@
     margin-bottom: $space-base*2;
   }
 
-  .stepTwo__select {
+
+  .stepTwo__select,
+  .stepThree__select {
     display: flex;
     align-items: center;
     margin-top: $space-base*4;
@@ -55,8 +57,25 @@
           cursor: pointer;
         }
       }
+
+      .select__optionsThree {
+        position: absolute;
+        border: 1px solid $color-border;
+        width: 100%;
+        right: 0;
+        top: 3rem;
+        padding: 0 $space-base/2;
+        background-color: #ececec;
+
+        .options_option {
+          cursor: pointer;
+        }
+      }
     }
 
+    .form__selectThree {
+      width: 22%;
+    }
   }
 
 
