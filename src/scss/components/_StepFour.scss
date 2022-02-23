@@ -1,0 +1,43 @@
+.stepFour__form {
+
+  .form__data {
+    display: flex;
+    justify-content: space-between;
+    width: 63%;
+    margin-bottom: $space-base*5;
+
+    .data__address,
+    .data__date {
+      width: 45%;
+
+      .address__title,
+      .date__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: $space-base*2;
+      }
+
+      .address__verse,
+      .date__verse {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $space-base*2;
+
+        .verse__title {
+          margin: 0 5% 0 0;
+          font-weight: 300;
+          font-size: 1.5rem;
+          width: 30%;
+        }
+
+        .verse__input {
+          border: 1px solid $color-border;
+          padding: $space-base/5;
+          font-size: 1.5rem;
+          width: 65%;
+        }
+      }
+    }
+  }
+}

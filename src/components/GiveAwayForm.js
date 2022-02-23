@@ -4,6 +4,7 @@ import StepOne from "./StepOne";
 import bg from "../assets/Background-Form.jpg"
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
+import StepFour from "./StepFour";
 
 const stepOneArray = [
     {
@@ -51,7 +52,7 @@ export default function GiveAwayForm() {
                     <Route path="krok-1" element={ <StepOne bg={bg} setStepOne={setStepOne} stepOne={stepOne} stepOneArray={stepOneArray}/> } />
                     <Route path="krok-2" element={ <StepTwo bg={bg} setStepTwo={setStepTwo} stepTwo={stepTwo}/> } />
                     <Route path="krok-3" element={ <StepThree bg={bg} setStepThree={setStepThree} stepThree={stepThree} whoToHelp={whoToHelp}/> } />
-                    <Route path="krok-4" element={ <StepOne /> } />
+                    <Route path="krok-4" element={ <StepFour bg={bg} /> } />
                     <Route path="podsumowanie" element={ <StepOne /> } />
                 </Routes>
             </section>
