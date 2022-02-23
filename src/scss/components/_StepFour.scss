@@ -1,5 +1,9 @@
 .stepFour__form {
 
+  .form__title {
+    margin-bottom: $space-base*3;
+  }
+
   .form__data {
     display: flex;
     justify-content: space-between;
@@ -33,9 +37,10 @@
 
         .verse__input {
           border: 1px solid $color-border;
-          padding: $space-base/5;
+          padding: $space-base/5 $space-base/2;
           font-size: 1.5rem;
           width: 65%;
+          font-weight: 300;
         }
       }
     }
