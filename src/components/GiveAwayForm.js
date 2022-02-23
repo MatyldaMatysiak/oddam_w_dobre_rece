@@ -42,7 +42,7 @@ export default function GiveAwayForm() {
     })
     const [stepFour, setStepFour] = useState({})
 
-    console.log(stepOne)
+    console.log(stepThree)
 
     return (
         <>

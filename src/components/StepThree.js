@@ -10,16 +10,7 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
     const [imgSrc, setImgSrc] = useState(arrowDown)
     const [options, setOptions] = useState("hide")
     const [selectValue, setSelectValue] = useState(stepThree.location);
-    const [isChecked, setIsChecked] = useState({})
-
-    useEffect(() => {
-        whoToHelp.map(element => setIsChecked(prev => {
-            return {
-                ...prev,
-                [element]: ""
-            }
-        }))
-    }, [])
+    const [input, setInput] = useState(stepThree.organizationName)
 
     const handleShowSelect = () => {
         if (options === "hide") {
@@ -36,25 +27,45 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
         setSelectValue(e.target.innerText);
         setOptions("hide");
         setImgSrc(arrowDown);
+        setStepThree(prev => {
+            return {
+                ...prev,
+                location: e.target.innerText
+            }
+        })
     }
 
     const handleCheckbox = (e) => {
-        if (isChecked[e.target.innerText] === "") {
-            setIsChecked(prev => {
+        if (stepThree.whoHelp.includes(e.target.innerText)) {
+            let newWhoHelp = [...stepThree.whoHelp];
+            newWhoHelp.splice(newWhoHelp.indexOf(e.target.innerText, 1));
+            setStepThree(prev => {
                 return {
                     ...prev,
-                    [e.target.innerText]: "option-yellow"
+                    whoHelp: newWhoHelp
                 }
             })
         } else {
-            setIsChecked(prev => {
+            let newWhoHelp = [...stepThree.whoHelp, e.target.innerText]
+            console.log(newWhoHelp)
+            setStepThree(prev => {
                 return {
                     ...prev,
-                    [e.target.innerText]: ""
+                    whoHelp: newWhoHelp
                 }
             })
         }
 
+    }
+
+    const handleSaveInput = (e) => {
+        console.log("hey")
+        setStepThree(prev => {
+            return {
+                ...prev,
+                organizationName: input
+            }
+        })
     }
 
     return (
@@ -80,12 +91,12 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
                     <div className="form__checkbox">
                         <h3 className="checkbox__title stepThreeForm__secondaryTitle">Komu chcesz pomóc?</h3>
                         <div className="checkbox__options">
-                            {whoToHelp.map(element => <p key={element} className={`options__option ${isChecked[element]}`} onClick={handleCheckbox}>{element}</p>)}
+                            {whoToHelp.map(element => <p key={element} className={`options__option ${stepThree.whoHelp.includes(element) ? "option-yellow" : ""}`} onClick={handleCheckbox}>{element}</p>)}
                         </div>
                     </div>
                     <div className="form__organizationName">
                         <label htmlFor="chosen-organization" className="organizationName__title stepThreeForm__secondaryTitle">Wpisz nazwę konkretnej organizacji (opcjonalnie)</label>
-                        <input type="text" id="chosen-organization" name="chosen-organization" className="organizationName"/>
+                        <input type="text" id="chosen-organization" name="chosen-organization" className="organizationName" value={input} onChange={(e) => setInput(e.target.value)} onBlur={handleSaveInput}/>
                     </div>
                 </form>
                 <div className="buttonBox">
