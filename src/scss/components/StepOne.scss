@@ -4,6 +4,13 @@
   flex-direction: column;
   justify-content: space-between;
 
+  .stepTwo__validationText {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: red;
+    margin: $space-base*2 0;
+  }
+
   .stepNumber {
     font-size: 1.5rem;
     font-weight: 300;
@@ -41,6 +48,10 @@
       justify-content: space-between;
       position: relative;
       min-width: fit-content;
+
+      &.invalid {
+        border-color: red;
+      }
 
       .select__arrow {
         cursor: pointer;

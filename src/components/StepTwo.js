@@ -10,6 +10,7 @@ export default function StepTwo({bg, setStepTwo, stepTwo}) {
     const [imgSrc, setImgSrc] = useState(arrowDown)
     const [options, setOptions] = useState("hide")
     const [selectValue, setSelectValue] = useState(stepTwo)
+    const [validation, setValidation] = useState(true)
 
     const handleShowSelect = () => {
         if (options === "hide") {
@@ -27,6 +28,14 @@ export default function StepTwo({bg, setStepTwo, stepTwo}) {
         setOptions("hide");
         setImgSrc(arrowDown);
         setStepTwo(e.target.innerText)
+        setValidation(true)
+    }
+
+    const handleValidation = (e) => {
+        if (selectValue === "--wybierz--") {
+            e.preventDefault();
+            setValidation(false)
+        }
     }
 
     return (
@@ -38,7 +47,7 @@ export default function StepTwo({bg, setStepTwo, stepTwo}) {
                     <h2 className="form__title">Podaj liczbę 60l worków, w które spakowałeś / aś rzeczy:</h2>
                     <div className="stepTwo__select">
                         <h3 className="form__label" >Liczba 60l worków:</h3>
-                        <div className="form__select" id="bags">
+                        <div className={`form__select ${validation ? "" : "invalid"}`} id="bags">
                             <p className="select__choose">{selectValue}</p>
                             <img src={imgSrc} alt="arrow down" className="select__arrow" onClick={handleShowSelect}/>
                             {options === "visible" ? <div className="select__options">
@@ -50,10 +59,11 @@ export default function StepTwo({bg, setStepTwo, stepTwo}) {
                             </div> : <></>}
                         </div>
                     </div>
+                    {!validation ? <p className="stepTwo__validationText">Wybierz ilość worków!</p> : <></>}
                 </form>
                 <div className="buttonBox">
                     <Link to="/oddaj-rzeczy/krok-1"><button className="btn btn-active btn-form">Wstecz</button></Link>
-                    <Link to="/oddaj-rzeczy/krok-3"><button className="btn btn-active btn-form">Dalej</button></Link>
+                    <Link to="/oddaj-rzeczy/krok-3" onClick={handleValidation}><button className="btn btn-active btn-form">Dalej</button></Link>
                 </div>
             </main>
 
