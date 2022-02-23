@@ -1,0 +1,75 @@
+.summary {
+
+  .summary__title {
+    margin-bottom: $space-base*3;
+  }
+
+  .summary__giveAway {
+    margin-bottom: $space-base*3;
+
+    .giveAway__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: $space-base*2;
+    }
+
+    .giveAway__details {
+      margin-bottom: $space-base*2;
+      width: 70%;
+
+      .details__verse {
+        display: flex;
+        align-items: center;
+        margin-bottom: $space-base;
+
+        .Icon {
+          width: 3rem;
+          margin-right: $space-base*1.5;
+        }
+
+        .details__description {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .summary__pickUp {
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+
+    .pickUp__address,
+    .pickUp__date {
+      margin-bottom: $space-base*4;
+      width: 40%;
+
+      .address__title,
+      .date__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: $space-base*2;
+      }
+
+      .address__details,
+      .date__details {
+        display: flex;
+        align-items: center;
+        margin-bottom: $space-base*1.5;
+        font-size: 1.5rem;
+        font-weight: 300;
+        min-width: fit-content;
+
+        .details__name {
+          width: 30%;
+          min-width: 120px;
+          margin-right: 10%;
+        }
+
+        .details__content {
+          width: 60%;
+        }
+      }
+    }
+  }
+}

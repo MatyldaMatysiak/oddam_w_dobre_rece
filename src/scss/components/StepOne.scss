@@ -10,7 +10,8 @@
     margin-bottom: $space-base*5;
   }
 
-  .form__title {
+  .form__title,
+  .summary__title {
     font-size: 2.25rem;
     font-weight: 600;
     margin-bottom: $space-base*2;
