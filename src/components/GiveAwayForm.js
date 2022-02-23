@@ -5,14 +5,15 @@ import bg from "../assets/Background-Form.jpg"
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
+import Summary from "./Summary";
 
 const stepOneArray = [
     {
-        value: "ubrania, które nadają się do ponownego użycia",
+        value: "ubrania - które nadają się do ponownego użycia",
         id: "ubrania"
     },
     {
-        value: "ubrania, do wyrzucenia",
+        value: "ubrania - do wyrzucenia",
         id: "ubrania2"
     },
     {
@@ -62,7 +63,7 @@ export default function GiveAwayForm() {
                     <Route path="krok-2" element={ <StepTwo bg={bg} setStepTwo={setStepTwo} stepTwo={stepTwo}/> } />
                     <Route path="krok-3" element={ <StepThree bg={bg} setStepThree={setStepThree} stepThree={stepThree} whoToHelp={whoToHelp}/> } />
                     <Route path="krok-4" element={ <StepFour bg={bg} setStepFour={setStepFour} stepFour={stepFour}/> } />
-                    <Route path="podsumowanie" element={ <StepOne /> } />
+                    <Route path="podsumowanie" element={ <Summary bg={bg} stepOne={stepOne} stepTwo={stepTwo} stepThree={stepThree} stepFour={stepFour} /> } />
                 </Routes>
             </section>
         </>
