@@ -10,7 +10,8 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
     const [imgSrc, setImgSrc] = useState(arrowDown)
     const [options, setOptions] = useState("hide")
     const [selectValue, setSelectValue] = useState(stepThree.location);
-    const [input, setInput] = useState(stepThree.organizationName)
+    const [input, setInput] = useState(stepThree.organizationName);
+    const [validation, setValidation] = useState({location: true, whoToHelp: true})
 
     const handleShowSelect = () => {
         if (options === "hide") {
@@ -33,6 +34,12 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
                 location: e.target.innerText
             }
         })
+        setValidation(prev => {
+            return {
+                ...prev,
+                location: true
+            }
+        })
     }
 
     const handleCheckbox = (e) => {
@@ -47,15 +54,32 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
             })
         } else {
             let newWhoHelp = [...stepThree.whoHelp, e.target.innerText]
-            console.log(newWhoHelp)
             setStepThree(prev => {
                 return {
                     ...prev,
                     whoHelp: newWhoHelp
                 }
             })
+            setValidation(prev => {
+                return {
+                    ...prev,
+                    whoToHelp: true
+                }
+            })
         }
 
+    }
+
+    const handleInputChange = (e) => {
+        setInput(e.target.value);
+        if (input.length !== 0) {
+            setValidation(prev => {
+                return {
+                    ...prev,
+                    location: true
+                }
+            })
+        }
     }
 
     const handleSaveInput = (e) => {
@@ -68,6 +92,28 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
         })
     }
 
+    const handleValidation = (e) => {
+        if (selectValue === "--wybierz--" && input.length === 0) {
+            e.preventDefault();
+            setValidation(prev => {
+                return {
+                    ...prev,
+                    location: false
+                }
+            })
+        }
+
+        if (stepThree.whoHelp.length === 0) {
+            e.preventDefault();
+            setValidation(prev => {
+                return {
+                    ...prev,
+                    whoToHelp: false
+                }
+            })
+        }
+    }
+
     return (
         <>
             <StepsHeader description={description} />
@@ -76,7 +122,7 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
                     <p className="stepNumber">3/4</p>
                     <h2 className="form__title">Lokalizacja:</h2>
                     <div className="stepThree__select">
-                        <div className="form__select form__selectThree" id="bags">
+                        <div className={`form__select ${validation.location ? "" : "invalid"} form__selectThree`} id="bags">
                             <p className="select__choose">{selectValue}</p>
                             <img src={imgSrc} alt="arrow down" className="select__arrow" onClick={handleShowSelect}/>
                             {options === "visible" ? <div className="select__optionsThree">
@@ -88,20 +134,22 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
                             </div> : <></>}
                         </div>
                     </div>
+                    {!validation.location ? <p className="stepThree__validationText">Wybierz lokalizację lub wpisz nazwę organizacji poniżej!</p> : <></>}
                     <div className="form__checkbox">
                         <h3 className="checkbox__title stepThreeForm__secondaryTitle">Komu chcesz pomóc?</h3>
                         <div className="checkbox__options">
                             {whoToHelp.map(element => <p key={element} className={`options__option ${stepThree.whoHelp.includes(element) ? "option-yellow" : ""}`} onClick={handleCheckbox}>{element}</p>)}
                         </div>
+                        {!validation.whoToHelp ? <p className="stepThree__validationText">Wybierz conajmniej jedną opcję!</p> : <></>}
                     </div>
                     <div className="form__organizationName">
                         <label htmlFor="chosen-organization" className="organizationName__title stepThreeForm__secondaryTitle">Wpisz nazwę konkretnej organizacji (opcjonalnie)</label>
-                        <input type="text" id="chosen-organization" name="chosen-organization" className="organizationName" value={input} onChange={(e) => setInput(e.target.value)} onBlur={handleSaveInput}/>
+                        <input type="text" id="chosen-organization" name="chosen-organization" className="organizationName" value={input} onChange={handleInputChange} onBlur={handleSaveInput}/>
                     </div>
                 </form>
                 <div className="buttonBox">
                     <Link to="/oddaj-rzeczy/krok-2"><button className="btn btn-active btn-form">Wstecz</button></Link>
-                    <Link to="/oddaj-rzeczy/krok-4"><button className="btn btn-active btn-form">Dalej</button></Link>
+                    <Link to="/oddaj-rzeczy/krok-4" onClick={handleValidation}><button className="btn btn-active btn-form">Dalej</button></Link>
                 </div>
             </main>
         </>

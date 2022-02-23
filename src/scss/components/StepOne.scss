@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: space-between;
 
-  .stepTwo__validationText {
+  .stepTwo__validationText,
+  .stepThree__validationText {
     font-size: 1.25rem;
     font-weight: 600;
     color: red;

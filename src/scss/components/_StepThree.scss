@@ -3,6 +3,10 @@
   .stepThree__select {
     margin-top: $space-base*2;
 
+    .invalid {
+      border-color: red;
+    }
+
     .select__optionsThree {
       background-color: #ececec;
       z-index: 10;
@@ -43,6 +47,10 @@
           background-color: $color-yellow;
         }
       }
+    }
+
+    .stepThree__validationText {
+      margin: 0 0 $space-base*3 0;
     }
   }
 
