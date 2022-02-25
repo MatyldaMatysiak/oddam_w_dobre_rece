@@ -133,14 +133,14 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
                                 <p className="options_option" onClick={handleChooseOption}>Katowice</p>
                             </div> : <></>}
                         </div>
+                        <p className={`stepThree__validationText ${validation.location ? "" : "visible"}`}>Wybierz lokalizację lub wpisz nazwę organizacji poniżej!</p>
                     </div>
-                    {!validation.location ? <p className="stepThree__validationText">Wybierz lokalizację lub wpisz nazwę organizacji poniżej!</p> : <></>}
                     <div className="form__checkbox">
                         <h3 className="checkbox__title stepThreeForm__secondaryTitle">Komu chcesz pomóc?</h3>
                         <div className="checkbox__options">
                             {whoToHelp.map(element => <p key={element} className={`options__option ${stepThree.whoHelp.includes(element) ? "option-yellow" : ""}`} onClick={handleCheckbox}>{element}</p>)}
                         </div>
-                        {!validation.whoToHelp ? <p className="stepThree__validationText">Wybierz conajmniej jedną opcję!</p> : <></>}
+                        <p className={`stepThree__validationText ${validation.whoToHelp ? "" : "visible"}`}>Wybierz conajmniej jedną opcję!</p>
                     </div>
                     <div className="form__organizationName">
                         <label htmlFor="chosen-organization" className="organizationName__title stepThreeForm__secondaryTitle">Wpisz nazwę konkretnej organizacji (opcjonalnie)</label>

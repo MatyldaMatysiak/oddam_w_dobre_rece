@@ -59,7 +59,7 @@ export default function StepTwo({bg, setStepTwo, stepTwo}) {
                             </div> : <></>}
                         </div>
                     </div>
-                    {!validation ? <p className="stepTwo__validationText">Wybierz ilość worków!</p> : <></>}
+                    <p className={`stepTwo__validationText ${validation ? "" : "visible"}`}>Wybierz ilość worków!</p>
                 </form>
                 <div className="buttonBox">
                     <Link to="/oddaj-rzeczy/krok-1"><button className="btn btn-active btn-form">Wstecz</button></Link>

@@ -4,12 +4,16 @@
   flex-direction: column;
   justify-content: space-between;
 
-  .stepTwo__validationText,
-  .stepThree__validationText {
+  .stepTwo__validationText {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 400;
     color: red;
     margin: $space-base*2 0;
+    visibility: hidden;
+
+    &.visible {
+      visibility: visible;
+    }
   }
 
   .stepNumber {

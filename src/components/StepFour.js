@@ -172,26 +172,38 @@ export default function StepFour({bg, stepFour, setStepFour}) {
                             <h3 className="address__title">Adres odbioru:</h3>
                             <div className="address__verse">
                                 <label htmlFor="street" className="verse__title">Ulica</label>
-                                <input type="text" id="street" name="street" className={`verse__input ${validation.street ? "" : "invalid"}`} value={form.street} onChange={handleUpdateForm}/></div>
+                                <input type="text" id="street" name="street" className={`verse__input ${validation.street ? "" : "invalid"}`} value={form.street} onChange={handleUpdateForm}/>
+                            </div>
+                            <p className={`stepFour__validationText ${validation.street ? "" : "visible"}`}>Nazwa ulicy musi mieć conajmniej 2 znaki!</p>
+
                             <div className="address__verse">
                                 <label htmlFor="city" className="verse__title">Miasto</label>
-                                <input type="text" id="city" name="city" className={`verse__input ${validation.city ? "" : "invalid"}`} value={form.city} onChange={handleUpdateForm}/></div>
+                                <input type="text" id="city" name="city" className={`verse__input ${validation.city ? "" : "invalid"}`} value={form.city} onChange={handleUpdateForm}/>
+                            </div>
+                            <p className={`stepFour__validationText ${validation.city ? "" : "visible"}`}>Nazwa miasta musi mieć conajmniej 2 znaki!</p>
                             <div className="address__verse">
                                 <label htmlFor="postalCode" className="verse__title">Kod<br/>pocztowy</label>
-                                <input type="text" id="postalCode" name="postalCode" className={`verse__input ${validation.postalCode ? "" : "invalid"}`} value={form.postalCode} onChange={handleUpdateForm}/></div>
+                                <input type="text" id="postalCode" name="postalCode" className={`verse__input ${validation.postalCode ? "" : "invalid"}`} value={form.postalCode} onChange={handleUpdateForm}/>
+                            </div>
+                            <p className={`stepFour__validationText ${validation.postalCode ? "" : "visible"}`}>Kod pocztowy musi mieć poprawny format np. 12-345!</p>
                             <div className="address__verse">
                                 <label htmlFor="phoneNumber" className="verse__title">Numer<br/>telefonu</label>
                                 <input type="number" id="phoneNumber" name="phoneNumber" className={`verse__input ${validation.phoneNumber ? "" : "invalid"}`} value={form.phoneNumber} onChange={handleUpdateForm}/>
                             </div>
+                            <p className={`stepFour__validationText ${validation.phoneNumber ? "" : "visible"}`}>Poprawny nr telefonu musi mieć 9 znaków!</p>
                         </div>
                         <div className="data__date">
                             <h3 className="date__title">Termin odbioru:</h3>
                             <div className="date__verse">
                                 <label htmlFor="day" className="verse__title">Data</label>
-                                <input type="date" id="day" name="day" className={`verse__input ${validation.day ? "" : "invalid"}`} value={form.day} onChange={handleUpdateForm}/></div>
+                                <input type="date" id="day" name="day" className={`verse__input ${validation.day ? "" : "invalid"}`} value={form.day} onChange={handleUpdateForm}/>
+                            </div>
+                            <p className={`stepFour__validationText ${validation.day ? "" : "visible"}`}>Wybierz poprawną datę!</p>
                             <div className="date__verse">
                                 <label htmlFor="hour" className="verse__title">Godzina</label>
-                                <input type="text" id="hour" name="hour" className={`verse__input ${validation.hour ? "" : "invalid"}`} value={form.hour} onChange={handleUpdateForm}/></div>
+                                <input type="text" id="hour" name="hour" className={`verse__input ${validation.hour ? "" : "invalid"}`} value={form.hour} onChange={handleUpdateForm}/>
+                            </div>
+                            <p className={`stepFour__validationText ${validation.hour ? "" : "visible"}`}>Wpisz godzinę w poprawnym formacie np. 13:00!</p>
                             <div className="date__verse">
                                 <label htmlFor="comments" className="verse__title">Uwagi<br/>dla kuriera</label>
                                 <textarea id="comments" name="comments" className="verse__input" rows="4" value={form.comments} onChange={handleUpdateForm}/></div>
