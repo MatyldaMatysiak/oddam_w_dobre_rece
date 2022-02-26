@@ -3,6 +3,8 @@ import LoginRegister from "./LoginRegister";
 import Navigation from "./Navigation";
 import separator from "../assets/Decoration.svg"
 import {HashLink} from "react-router-hash-link";
+import {auth} from "../../firebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth"
 
 export default function SignUpView() {
     const [loader, setLoader] = useState("loading")
@@ -30,6 +32,20 @@ export default function SignUpView() {
         }
 
         setValidation([...sendOrNot])
+
+        if (sendOrNot.length === 0) {
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    console.log(user)
+                })
+                .catch((error) => {
+                    // const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorMessage)
+                });
+        }
     }
 
     return (
