@@ -3,10 +3,10 @@ import HomeContact from "./HomeContact";
 import GiveAwayForm from "./GiveAwayForm";
 import GiveAwayHeader from "./GiveAwayHeader";
 
-export default function GiveAwayThings() {
+export default function GiveAwayThings({ userData, setUserData }) {
     return (
         <>
-            <GiveAwayHeader />
+            <GiveAwayHeader userData={userData} setUserData={setUserData}/>
             <GiveAwayForm />
             <HomeContact />
         </>

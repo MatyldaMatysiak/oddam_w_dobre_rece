@@ -4,12 +4,13 @@ import Navigation from "./Navigation";
 import separator from "../assets/Decoration.svg"
 import heroImage from "../assets/Form-Hero-Image.jpg"
 import {Link} from "react-router-dom";
+import LoggedUserUpperNav from "./LoggedUserUpperNav";
 
-export default function GiveAwayHeader() {
+export default function GiveAwayHeader({ userData, setUserData }) {
     return (
         <header className="headerContainer giveAwayHeader">
             <div className="navBox">
-                <LoginRegister/>
+                <LoggedUserUpperNav userEmail={userData.email} setUserData={setUserData}/>
                 <Navigation/>
             </div>
             <div className="heroContainer" style={{ backgroundImage: `url(${heroImage})` }}>

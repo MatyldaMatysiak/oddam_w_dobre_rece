@@ -4,6 +4,10 @@
   text-align: end;
   margin-bottom: $space-base;
 
+  .register {
+    font-size: 0.8125rem;
+  }
+
   a:not(:last-child) {
     margin-right: $space-base;
   }

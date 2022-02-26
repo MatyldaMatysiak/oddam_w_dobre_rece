@@ -6,10 +6,10 @@ import HomeAbout from "./HomeAbout";
 import HomeWhoWeHelp from "./HomeWhoWeHelp";
 import HomeContact from "./HomeContact";
 
-export default function Home() {
+export default function Home({ userData, setUserData }) {
     return (
         <>
-            <HomeHeader/>
+            <HomeHeader userData={userData} setUserData={setUserData}/>
             <HomeThreeColumns/>
             <HomeSimpleSteps/>
             <HomeAbout/>

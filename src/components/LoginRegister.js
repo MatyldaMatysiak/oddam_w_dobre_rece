@@ -8,7 +8,7 @@ export default function LoginRegister() {
                 <button className="btn">Zaloguj</button>
             </Link>
             <Link to="/rejestracja">
-                <button className="btn btn-active btn-yellow">Załóż konto</button>
+                <button className="btn btn-active btn-yellow register">Załóż konto</button>
             </Link>
         </div>
     )

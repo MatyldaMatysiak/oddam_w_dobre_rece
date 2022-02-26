@@ -3,10 +3,10 @@ import LoginRegister from "./LoginRegister";
 import Navigation from "./Navigation";
 import separator from "../assets/Decoration.svg"
 import {HashLink} from "react-router-hash-link";
-import {auth} from "../../firebaseConfig";
+import {auth} from "../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth"
 
-export default function SignUpView() {
+export default function SignUpView({ setUserData }) {
     const [loader, setLoader] = useState("loading")
 
     const [email, setEmail] = useState("");
@@ -15,20 +15,21 @@ export default function SignUpView() {
     const [validation, setValidation] = useState([])
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-
         const sendOrNot = [];
 
         if (email.length === 0 || email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) === null) {
             sendOrNot.push("invalidEmail")
+            e.preventDefault();
         }
 
         if (password.length < 6) {
             sendOrNot.push("invalidPassword")
+            e.preventDefault();
         }
 
-        if (password2.length < 6 || password2 === password) {
+        if (password2.length < 6 || password2 !== password) {
             sendOrNot.push("invalidPassword2")
+            e.preventDefault();
         }
 
         setValidation([...sendOrNot])
@@ -38,6 +39,12 @@ export default function SignUpView() {
                 .then((userCredential) => {
                     // Signed in
                     const user = userCredential.user;
+                    setUserData(prev => {
+                        return {
+                            ...prev,
+                            email: user.email
+                        }
+                    })
                     console.log(user)
                 })
                 .catch((error) => {
@@ -54,7 +61,7 @@ export default function SignUpView() {
                 <LoginRegister/>
                 <Navigation/>
             </div>
-            <form className="loginRegister__form" onSubmit={handleSubmit}>
+            <form className="loginRegister__form">
                 <h2 className="form__title">Załóż konto</h2>
                 <img src={separator} alt="separator" className="separator" onLoad={() => setLoader('loaded')}/>
                 {loader === 'loaded' ? <>
@@ -77,7 +84,7 @@ export default function SignUpView() {
                     </div>
                     <div className="form__buttons">
                         <HashLink to="/logowanie"><button className="btn">Zaloguj się</button></HashLink>
-                        <button className="btn btn-active" type="submit">Załóż konto</button>
+                        <HashLink to="/"><button className="btn btn-active" onClick={handleSubmit}>Załóż konto</button></HashLink>
                     </div>
                 </> : <></>}
 
