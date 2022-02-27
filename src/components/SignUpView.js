@@ -39,13 +39,6 @@ export default function SignUpView({ setUserData }) {
                 .then((userCredential) => {
                     // Signed in
                     const user = userCredential.user;
-                    setUserData(prev => {
-                        return {
-                            ...prev,
-                            email: user.email
-                        }
-                    })
-                    console.log(user)
                 })
                 .catch((error) => {
                     // const errorCode = error.code;

@@ -6,6 +6,7 @@ import SignUpView from "./components/SignUpView";
 import Logout from "./components/Logout";
 import GiveAwayThings from "./components/GiveAwayThings";
 import { auth } from "./firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
 
 function App() {
 
@@ -16,16 +17,33 @@ function App() {
   console.log(userData)
 
   useEffect(() => {
-      const user = auth.currentUser;
-      console.log(user)
-      if (user) {
-          setUserData(prev => {
-              return {
-                  ...prev,
-                  email: user.email
-              }
-          })
-      }
+      onAuthStateChanged(auth, (user) => {
+          if (user) {
+              setUserData(prev => {
+                  return {
+                      ...prev,
+                      email: user.email
+                  }
+              })
+          } else {
+              setUserData(prev => {
+                  return {
+                      ...prev,
+                      email: ""
+                  }
+              })
+          }
+      });
+      // const user = auth.currentUser;
+      // console.log(user)
+      // if (user) {
+      //     setUserData(prev => {
+      //         return {
+      //             ...prev,
+      //             email: user.email
+      //         }
+      //     })
+      // }
   }, [])
 
   return (
