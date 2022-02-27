@@ -26,8 +26,16 @@
         width: 14%;
       }
 
+      @include medium {
+        width: 18%;
+      }
+
       &:not(:last-child) {
         margin-right: 7%;
+
+        @include medium {
+          margin-right: 5%;
+        }
       }
 
       .step__icon {
@@ -57,6 +65,10 @@
 
     @include desktop {
       width: 22%;
+    }
+
+    @include  medium {
+      width: 30%;
     }
   }
 }

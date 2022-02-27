@@ -1,8 +1,16 @@
 .aboutUs {
   display: flex;
 
+  @include medium {
+    flex-direction: column;
+  }
+
   .about-column {
     width: 50%;
+
+    @include medium {
+      width: 100%;
+    }
   }
 
   .aboutUs__aboutText {
@@ -32,10 +40,17 @@
       @include desktop {
         font-size: 1.75rem;
       }
+
+
     }
 
     .aboutText__signature {
       align-self: end;
+      width: 40%;
+
+      @include medium {
+        width: 20%;
+      }
     }
   }
 
@@ -43,5 +58,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left -150px bottom;
+
+    @include medium {
+      height: 500px;
+      background-position: initial;
+    }
   }
 }

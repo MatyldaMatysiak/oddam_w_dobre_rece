@@ -21,6 +21,10 @@
       padding: 5%;
     }
 
+    @include medium {
+      width: 77%;
+    }
+
     .form__title {
       font-size: 2.375rem;
       padding: 0 5% $space-base*2;
