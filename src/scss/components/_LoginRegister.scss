@@ -4,6 +4,10 @@
   text-align: end;
   margin-bottom: $space-base;
 
+  @include desktop {
+    margin-bottom: 0;
+  }
+
   .register {
     font-size: 0.8125rem;
   }

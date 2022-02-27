@@ -1,25 +1,39 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-scroll";
 import {HashLink} from "react-router-hash-link";
 
 export default function Navigation() {
+
+    const [toggleMenu, setToggleMenu] = useState(true)
+
+    const handleToggleMenu = () => {
+        setToggleMenu(!toggleMenu)
+    }
+
+    const handleCloseMenu = () => {
+        setToggleMenu(true)
+    }
+
     return (
-        <nav className="mainNav">
-            <HashLink to="/">
-                <button className="btn btn-active">Start</button>
-            </HashLink>
-            <HashLink to="/#simpleSteps" duration={500}>
-                <button className="btn">O co chodzi?</button>
-            </HashLink>
-            <HashLink to="/#aboutUs" duration={500}>
-                <button className="btn">O nas</button>
-            </HashLink>
-            <HashLink to="/#whoWeHelp" duration={500}>
-                <button className="btn">Fundacja i organizacje</button>
-            </HashLink>
-            <HashLink to="/#contact" duration={500}>
-                <button className="btn">Kontakt</button>
-            </HashLink>
-        </nav>
+        <>
+            <button className="btn btn-active menu-toggle" onClick={handleToggleMenu}>Menu</button>
+            <nav className={`mainNav ${toggleMenu ? "" : "active"}`}>
+                <HashLink to="/">
+                    <button className="btn btn-active" onBlur={handleCloseMenu}>Start</button>
+                </HashLink>
+                <HashLink to="/#simpleSteps" duration={500}>
+                    <button className="btn" onBlur={handleCloseMenu}>O co chodzi?</button>
+                </HashLink>
+                <HashLink to="/#aboutUs" duration={500}>
+                    <button className="btn" onBlur={handleCloseMenu}>O nas</button>
+                </HashLink>
+                <HashLink to="/#whoWeHelp" duration={500}>
+                    <button className="btn" onBlur={handleCloseMenu}>Fundacja i organizacje</button>
+                </HashLink>
+                <HashLink to="/#contact" duration={500}>
+                    <button className="btn" onBlur={handleCloseMenu}>Kontakt</button>
+                </HashLink>
+            </nav>
+        </>
     )
 }

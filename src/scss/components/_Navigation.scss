@@ -1,8 +1,45 @@
+.menu-toggle {
+  display: none;
+
+  @media (max-width: 1150px) {
+    display: block;
+  }
+}
+
 .mainNav {
   text-align: end;
   font-size: 1.125rem;
 
+  @include desktop {
+    text-align: start;
+  }
+
+  @media (max-width: 1150px) {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    flex-direction: column;
+    background-color: $color-yellow;
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+
+    button {
+      width: 100%;
+      text-align: start;
+      border-color: transparent;
+    }
+  }
+
   a:not(:last-child) {
     margin-right: $space-base;
+
+    @media (max-width: 1150px) {
+      margin: 0;
+    }
   }
+
+
 }
