@@ -25,13 +25,13 @@ export default function HomeWhoWeHelp() {
                 {/*    <button id={type} className={`whoWeHelp__button btn ${toggleActive === type ? "btn-active" : ""}`} onClick={handleChangeActive}>{type}</button>*/}
                 {/*</Link>)}*/}
                 <Link to="/" className="whoWeHelp__link" >
-                    <button id="fundacje" className={`whoWeHelp__button btn ${toggleActive === "fundacje" ? "btn-active" : ""}`} onClick={handleChangeActive}>Fundacje</button>
+                    <button id="fundacje" className={`whoWeHelp__button btn ${toggleActive === "fundacje" ? "btn-active" : ""}`} onClick={handleChangeActive}>Fundacjom</button>
                 </Link>
                 <Link to="/organizacje" className="whoWeHelp__link">
-                    <button id="organizacje" className={`whoWeHelp__button btn ${toggleActive === "organizacje" ? "btn-active" : ""}`} onClick={handleChangeActive}>Organizacjom<br/>pozarządowym</button>
+                    <button id="organizacje" className={`whoWeHelp__button btn ${toggleActive === "organizacje" ? "btn-active" : ""}`} onClick={handleChangeActive}>Organizacjom pozarządowym</button>
                 </Link>
                 <Link to="/zbiorki" className="whoWeHelp__link">
-                    <button id="zbiorki" className={`whoWeHelp__button btn ${toggleActive === "zbiorki" ? "btn-active" : ""}`} onClick={handleChangeActive}>Lokalnym<br/>zbiórkom</button>
+                    <button id="zbiorki" className={`whoWeHelp__button btn ${toggleActive === "zbiorki" ? "btn-active" : ""}`} onClick={handleChangeActive}>Lokalnym zbiórkom</button>
                 </Link>
             </nav>
             <p className="whoWeHelp__description">

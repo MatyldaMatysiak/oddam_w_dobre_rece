@@ -25,6 +25,10 @@
       width: 77%;
     }
 
+    @include small {
+      width: 88%;
+    }
+
     .form__title {
       font-size: 2.375rem;
       padding: 0 5% $space-base*2;

@@ -13,23 +13,42 @@
   .whoWeHelp__navigation {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
     margin-bottom: $space-base*5;
+
+    @include medium {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto $space-base*3;
+    }
 
     .whoWeHelp__link {
       width: 20%;
       align-self: stretch;
+      min-width: 215px;
       display: flex;
-      min-width: fit-content;
+
+      @include desktop {
+        width: 25%;
+      }
+
+      @include medium {
+        width: 70%;
+        margin: 0 0 $space-base 0;
+        align-self: center;
+      }
 
       &:not(:last-child) {
         margin-right: 7%;
+
+        @include medium {
+          margin: 0 0 $space-base 0;
+        }
       }
 
       .whoWeHelp__button {
         width: 100%;
-        min-width: fit-content;
         font-size: 1.5rem;
       }
     }
@@ -39,5 +58,9 @@
     width: 60%;
     margin: 0 auto $space-base*5;
     font-size: 1.375rem;
+
+    @include medium {
+      display: none;
+    }
   }
 }
