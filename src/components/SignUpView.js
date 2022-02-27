@@ -5,31 +5,30 @@ import separator from "../assets/Decoration.svg"
 import {HashLink} from "react-router-hash-link";
 import {auth} from "../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth"
+import {useNavigate} from "react-router-dom";
 
 export default function SignUpView({ setUserData }) {
+    let navigate = useNavigate();
     const [loader, setLoader] = useState("loading")
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
     const [validation, setValidation] = useState([])
 
     const handleSubmit = (e) => {
+        e.preventDefault()
         const sendOrNot = [];
 
         if (email.length === 0 || email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) === null) {
             sendOrNot.push("invalidEmail")
-            e.preventDefault();
         }
 
         if (password.length < 6) {
             sendOrNot.push("invalidPassword")
-            e.preventDefault();
         }
 
         if (password2.length < 6 || password2 !== password) {
             sendOrNot.push("invalidPassword2")
-            e.preventDefault();
         }
 
         setValidation([...sendOrNot])
@@ -39,6 +38,13 @@ export default function SignUpView({ setUserData }) {
                 .then((userCredential) => {
                     // Signed in
                     const user = userCredential.user;
+                    setUserData(prev => {
+                        return {
+                            ...prev,
+                            email: user.email
+                        }
+                    });
+                    navigate("/")
                 })
                 .catch((error) => {
                     // const errorCode = error.code;
@@ -54,7 +60,7 @@ export default function SignUpView({ setUserData }) {
                 <LoginRegister/>
                 <Navigation/>
             </div>
-            <form className="loginRegister__form">
+            <form className="loginRegister__form" onSubmit={handleSubmit}>
                 <h2 className="form__title">Załóż konto</h2>
                 <img src={separator} alt="separator" className="separator" onLoad={() => setLoader('loaded')}/>
                 {loader === 'loaded' ? <>
@@ -76,8 +82,8 @@ export default function SignUpView({ setUserData }) {
                         </div>
                     </div>
                     <div className="form__buttons">
-                        <HashLink to="/logowanie"><button className="btn">Zaloguj się</button></HashLink>
-                        <HashLink to="/"><button className="btn btn-active" onClick={handleSubmit}>Załóż konto</button></HashLink>
+                        <HashLink to="/logowanie"><button className="btn" type="button">Zaloguj się</button></HashLink>
+                        <button className="btn btn-active" type="submit">Załóż konto</button>
                     </div>
                 </> : <></>}
 

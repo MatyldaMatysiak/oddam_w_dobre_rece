@@ -8,6 +8,11 @@
     right: 0;
     margin: $space-base*2 $space-base*4;
     z-index: 10;
+
+    @include desktop {
+      position: relative;
+
+    }
   }
 
   .heroContainer {
@@ -27,8 +32,12 @@
     text-align: center;
     padding: $space-base*25 10% $space-base*20;
 
+    @include desktop {
+      padding: $space-base*15 10% $space-base*20;
+    }
+
     @include medium {
-      padding: $space-base*20 10% $space-base*15;
+      padding: $space-base*10 10% $space-base*15;
     }
 
     a:not(:last-child) {
