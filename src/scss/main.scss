@@ -7,6 +7,8 @@
 @import "./elements/buttons";
 @import "./elements/formElements";
 
+@import "./settings/mixins";
+
 @import "./components/HomeHeader";
 @import "./components/LoginRegister";
 @import "./components/Navigation";
@@ -29,3 +31,4 @@
 @import "./components/Thanks";
 @import "./components/GiveAwayHeader";
 @import "components/LoggedUserUpperNav";
+

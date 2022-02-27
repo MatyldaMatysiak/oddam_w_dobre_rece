@@ -17,9 +17,14 @@
     padding: 3%;
     margin-bottom: $space-base*3;
 
+
     .fourSteps__step {
       text-align: center;
       width: 10%;
+
+      @include desktop {
+        width: 14%;
+      }
 
       &:not(:last-child) {
         margin-right: 7%;
@@ -48,5 +53,10 @@
 
   button {
     width: 18%;
+    min-width: fit-content;
+
+    @include desktop {
+      width: 22%;
+    }
   }
 }

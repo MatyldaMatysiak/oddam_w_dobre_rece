@@ -16,11 +16,16 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right 900px bottom;
+
+    @include desktop {
+      background-image: none !important;
+      justify-content: center;
+    }
   }
 
   .header__info {
     text-align: center;
-    padding: $space-base*25 $space-base*15 $space-base*20;
+    padding: $space-base*25 10% $space-base*20;
 
     a:not(:last-child) {
       margin-right: 5%;
@@ -38,6 +43,7 @@
 
     button {
       width: 45%;
+      min-width: fit-content;
     }
   }
 

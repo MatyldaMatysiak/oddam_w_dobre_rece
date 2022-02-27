@@ -5,9 +5,21 @@
   align-items: end;
   padding: 10% 7% 0;
 
+  @include desktop {
+    background-image: none !important;
+    background-color: $color-bg;
+    align-items: center;
+  }
+
   .contact__form {
     min-width: 35%;
     text-align: end;
+
+    @include desktop {
+      width: 60%;
+      background-color: $color-white;
+      padding: 5%;
+    }
 
     .form__title {
       font-size: 2.375rem;
@@ -73,6 +85,10 @@
     align-items: center;
     padding: $space-base*4 0 $space-base*1;
     margin-top: 15%;
+
+    @include desktop {
+      margin-top: 7%;
+    }
 
     .footer__copyrightContainer {
       width: 50%;

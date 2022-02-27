@@ -12,6 +12,10 @@
     padding: 10% 8%;
     background-color: $color-bg;
 
+    @include desktop {
+      padding: 7% 6%;
+    }
+
     .aboutText__title {
       font-size: 2.375rem;
     }
@@ -24,6 +28,10 @@
       font-size: 1.875rem;
       line-height: 1.8;
       margin-bottom: $space-base*2;
+
+      @include desktop {
+        font-size: 1.75rem;
+      }
     }
 
     .aboutText__signature {
