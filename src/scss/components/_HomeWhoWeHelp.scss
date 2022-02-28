@@ -20,7 +20,11 @@
       width: 100%;
       flex-direction: column;
       align-items: center;
-      margin: 0 auto $space-base*3;
+      margin: 0 auto $space-base*2;
+    }
+
+    @include small {
+      margin-bottom: $space-base;
     }
 
     .whoWeHelp__link {

@@ -29,6 +29,10 @@
       width: 88%;
     }
 
+    @include mobile {
+      width: 100%;
+    }
+
     .form__title {
       font-size: 2.375rem;
       padding: 0 5% $space-base*2;
@@ -37,6 +41,15 @@
 
     .separator {
       margin: 0 auto $space-base*4;
+
+      @include small {
+        margin: 0 auto $space-base*3;
+      }
+
+      @include mobile {
+        margin: 0 auto $space-base*2;
+        width: 70%;
+      }
     }
 
     .form__successMessage {
@@ -51,6 +64,14 @@
       display: flex;
       margin-bottom: $space-base*3;
       width: 100%;
+
+      @include mobile {
+        flex-direction: column;
+
+        .personalData__name {
+          margin-bottom: $space-base*3;
+        }
+      }
 
       .personalData {
         display: flex;
@@ -76,6 +97,10 @@
       text-align: start;
       width: 100%;
       margin-bottom: $space-base*3;
+
+      @include mobile {
+        margin-bottom: $space-base*2;
+      }
     }
 
     .error-message {
@@ -96,6 +121,10 @@
 
     @include desktop {
       margin-top: 7%;
+    }
+
+    @include mobile {
+      margin-top: 0;
     }
 
     .footer__copyrightContainer {

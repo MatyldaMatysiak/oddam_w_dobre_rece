@@ -1,4 +1,5 @@
 @import 'settings/reset';
+@import "./settings/mixins";
 @import "./settings/fonts";
 @import "./settings/colors";
 @import "./settings/base";
@@ -6,8 +7,6 @@
 
 @import "./elements/buttons";
 @import "./elements/formElements";
-
-@import "./settings/mixins";
 
 @import "./components/HomeHeader";
 @import "./components/LoginRegister";

@@ -30,6 +30,15 @@
 
     .separator {
       margin: $space-base*2 auto $space-base*4;
+
+      @include small {
+        margin-bottom: $space-base*3;
+      }
+
+      @include mobile {
+        margin-bottom: $space-base*2;
+        width: 65%;
+      }
     }
 
     .aboutText__description {
@@ -44,6 +53,11 @@
       @include small {
         font-size: 1.5rem;
       }
+
+      @include mobile {
+        font-size: 1.375rem;
+        margin-bottom: $space-base;
+      }
     }
 
     .aboutText__signature {
@@ -52,6 +66,10 @@
 
       @include medium {
         width: 20%;
+      }
+
+      @include mobile {
+        width: 25%;
       }
     }
   }
@@ -69,5 +87,11 @@
     @include small {
       height: 350px;
     }
+
+    @include mobile {
+      height: 250px;
+    }
+
+
   }
 }

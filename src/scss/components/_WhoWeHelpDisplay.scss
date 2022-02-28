@@ -5,6 +5,14 @@
 .pageNumbers {
   margin-top: $space-base*4;
 
+  @include medium {
+    margin-top: $space-base*3;
+  }
+
+  @include small {
+    margin-top: $space-base*2;
+  }
+
   button {
     margin: 0 $space-base/2;
   }

@@ -9,6 +9,10 @@
 
   .separator {
     margin: $space-base*2 auto;
+
+    @include mobile {
+      width: 65%
+    }
   }
 
   .simpleSteps__fourSteps {
@@ -113,6 +117,10 @@
 
     @include small {
       width: 40%;
+    }
+
+    @include mobile {
+      width: 55%;
     }
   }
 }

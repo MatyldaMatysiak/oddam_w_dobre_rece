@@ -15,7 +15,10 @@
       flex-direction: row-reverse;
       align-items: center;
       justify-content: space-between;
+      //box-shadow: 0px -1px 18px -7px rgba(66, 68, 90, 1);
     }
+
+
   }
 
   .heroContainer {
@@ -36,15 +39,19 @@
     padding: $space-base*25 10% $space-base*20;
 
     @include desktop {
-      padding: $space-base*15 10% $space-base*20;
+      padding: $space-base*12 10% $space-base*15;
     }
 
     @include medium {
-      padding: $space-base*10 10% $space-base*15;
+      padding: $space-base*10 10% $space-base*10;
     }
 
     @include small {
       padding: $space-base*6 10% $space-base*6;
+    }
+
+    @include mobile {
+      padding: $space-base*4 10% $space-base*4;
     }
 
     a:not(:last-child) {
@@ -63,6 +70,15 @@
 
     .separator {
       margin: 0 auto $space-base*5;
+
+      @include small {
+        margin-bottom: $space-base*3;
+      }
+
+      @include mobile {
+        margin-bottom: $space-base*2;
+        width: 65%;
+      }
     }
 
     .buttonsBox {
