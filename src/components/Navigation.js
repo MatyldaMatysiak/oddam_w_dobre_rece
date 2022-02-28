@@ -17,21 +17,21 @@ export default function Navigation() {
     return (
         <>
             <button className="btn btn-active menu-toggle" onClick={handleToggleMenu}>Menu</button>
-            <nav className={`mainNav ${toggleMenu ? "" : "active"}`} onClick={handleCloseMenu}>
-                <HashLink to="/">
-                    <button className="btn btn-active">Start</button>
+            <nav className={`mainNav ${toggleMenu ? "" : "active"}`}>
+                <HashLink to="/" onClick={handleCloseMenu}>
+                    <button className="btn btn-active" onBlur={handleCloseMenu}>Start</button>
                 </HashLink>
                 <HashLink to="/#simpleSteps" duration={500}>
-                    <button className="btn">O co chodzi?</button>
+                    <button className="btn" onBlur={handleCloseMenu}>O co chodzi?</button>
                 </HashLink>
                 <HashLink to="/#aboutUs" duration={500}>
-                    <button className="btn">O nas</button>
+                    <button className="btn" onBlur={handleCloseMenu}>O nas</button>
                 </HashLink>
                 <HashLink to="/#whoWeHelp" duration={500}>
-                    <button className="btn">Fundacja i organizacje</button>
+                    <button className="btn" onBlur={handleCloseMenu}>Fundacja i organizacje</button>
                 </HashLink>
                 <HashLink to="/#contact" duration={500}>
-                    <button className="btn">Kontakt</button>
+                    <button className="btn" onBlur={handleCloseMenu}>Kontakt</button>
                 </HashLink>
             </nav>
         </>
