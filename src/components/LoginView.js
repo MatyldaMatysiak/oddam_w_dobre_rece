@@ -51,9 +51,11 @@ export default function LoginView({ setUserData }) {
 
     return (
         <section className="login">
-            <div className="loginRegister__navBox">
-                <LoginRegister/>
-                <Navigation/>
+            <div className="shadow__container">
+                <div className="loginRegister__navBox">
+                    <LoginRegister/>
+                    <Navigation/>
+                </div>
             </div>
             <form className="loginRegister__form" onSubmit={handleSubmit}>
                 <h2 className="form__title">Zaloguj się</h2>

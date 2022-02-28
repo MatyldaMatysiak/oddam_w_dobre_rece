@@ -56,9 +56,11 @@ export default function SignUpView({ setUserData }) {
 
     return (
         <section className="Register">
-            <div className="loginRegister__navBox">
-                <LoginRegister/>
-                <Navigation/>
+            <div className="shadow__container">
+                <div className="loginRegister__navBox">
+                    <LoginRegister/>
+                    <Navigation/>
+                </div>
             </div>
             <form className="loginRegister__form" onSubmit={handleSubmit}>
                 <h2 className="form__title">Załóż konto</h2>

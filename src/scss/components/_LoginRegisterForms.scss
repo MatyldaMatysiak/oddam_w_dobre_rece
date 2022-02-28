@@ -1,60 +1,104 @@
+@include desktop {
 
-  .loginRegister__navBox {
-    margin: $space-base*2 $space-base*4;
+  .shadow__container {
+    padding: $space-base 0;
+    box-shadow: 0px -1px 18px -7px rgba(66, 68, 90, 1)
   }
 
-  .loginRegister__form {
+}
+
+.loginRegister__navBox {
+  margin: $space-base $space-base*4;
+
+
+  @include desktop {
+    text-align: start;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    width: 35%;
-    margin: $space-base*10 auto;
+    flex-direction: row-reverse;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 $space-base*4;
+    //box-shadow: 0px -1px 18px -7px rgba(66, 68, 90, 1);
+  }
+}
 
-    button {
-      font-size: 1.125rem;
-      font-weight: 300;
-    }
+.loginRegister__form {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  margin: $space-base*10 auto;
+  align-items: center;
 
-    .form__title {
-      font-size: 2.5rem;
-      margin-bottom: $space-base*2;
-      text-align: center;
-    }
+  @include medium {
+    width: 50%;
+  }
 
-    .separator {
-      margin-bottom: $space-base*4;
-    }
+  @include small {
+    width: 75%;
+    margin: $space-base*7 auto;
+  }
 
-    .form__inputs {
-      width: 80%;
-      background-color: $color-bg;
-      padding: 7% 10% 3%;
+  @include mobile {
+    width: 85%;
+    margin: $space-base*5 auto;
+  }
+
+  button {
+    font-size: 1.125rem;
+    font-weight: 300;
+  }
+
+  .form__title {
+    font-size: 2.5rem;
+    margin-bottom: $space-base*2;
+    text-align: center;
+  }
+
+  .separator {
+    margin-bottom: $space-base*4;
+
+    @include mobile {
+      width: 67%;
       margin-bottom: $space-base*3;
+    }
+  }
 
-      .inputs {
-        display: flex;
-        flex-direction: column;
+  .form__inputs {
+    width: 80%;
+    background-color: $color-bg;
+    padding: 7% 10% 3%;
+    margin-bottom: $space-base*3;
 
-        &:not(:last-child) {
-          margin-bottom: $space-base;
-        }
+    @include mobile {
+      width: 85%;
+    }
 
-        .error-message {
-          color: red;
-          margin-top: $space-base/5;
-          font-size: 0.8rem;
-          visibility: hidden;
+    .inputs {
+      display: flex;
+      flex-direction: column;
 
-          &.visible {
-            visibility: visible;
-          }
+      &:not(:last-child) {
+        margin-bottom: $space-base;
+      }
+
+      .error-message {
+        color: red;
+        margin-top: $space-base/5;
+        font-size: 0.8rem;
+        visibility: hidden;
+
+        &.visible {
+          visibility: visible;
         }
       }
     }
-
-    .form__buttons {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-    }
   }
+
+  .form__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

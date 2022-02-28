@@ -9,9 +9,11 @@ export default function Logout() {
 
     return (
         <section className="logout">
-            <div className="loginRegister__navBox">
-                <LoginRegister/>
-                <Navigation/>
+            <div className="shadow__container">
+                <div className="loginRegister__navBox">
+                    <LoginRegister/>
+                    <Navigation/>
+                </div>
             </div>
             <form className="loginRegister__form">
                 <h2 className="form__title">Wylogowanie nastąpiło pomyślnie!</h2>
