@@ -3,14 +3,26 @@
   .loggedUser__email {
     font-size: 0.875rem;
     font-weight: 600;
+
+    @include small {
+      font-size: 1rem;
+    }
   }
 
   .loggedUser__giveAway {
     font-size: 0.8125rem;
     font-weight: 600;
+
+    @include small {
+      font-size: 1rem;
+    }
   }
 
   .loggedUser__logOut {
     font-size: 0.75rem;
+
+    @include small {
+      font-size: 1rem;
+    }
   }
 }

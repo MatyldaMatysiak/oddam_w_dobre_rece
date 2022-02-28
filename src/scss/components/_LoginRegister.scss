@@ -1,18 +1,57 @@
+.menu-toggle {
+  display: none;
+
+  @include small {
+    display: block;
+  }
+}
+
 .loginRegisterBox {
   font-size: 0.875rem;
   color: $color-border;
   text-align: end;
   margin-bottom: $space-base;
 
-  @include desktop {
+  @include small {
     margin-bottom: 0;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    flex-direction: column;
+    background-color: $color-bg;
+    display: none;
+    width: 100%;
+    min-width: fit-content;
+
+    @include mobile {
+      top: 35px
+    }
+
+    &.active {
+      display: flex;
+    }
+
+    button {
+      width: 100%;
+      text-align: center;
+      border-color: transparent;
+      font-size: 1rem;
+    }
   }
 
   .register {
     font-size: 0.8125rem;
+
+    @include small {
+      font-size: 1rem;
+    }
   }
 
   a:not(:last-child) {
     margin-right: $space-base;
+
+    @include small {
+      margin-right: 0;
+    }
   }
 }

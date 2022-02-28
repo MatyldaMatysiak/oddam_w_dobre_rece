@@ -3,18 +3,30 @@
   text-align: end;
   width: 100%;
 
+  @include desktop {
+
+    .shadow__container {
+      padding: $space-base 0;
+      box-shadow: 0px -1px 18px -7px rgba(66, 68, 90, 1)
+    }
+
+  }
+
   .navBox {
     position: absolute;
     right: 0;
-    margin: $space-base*2 $space-base*4;
+    margin: $space-base $space-base*4;
     z-index: 10;
 
     @include desktop {
+      text-align: start;
       position: relative;
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
+      flex-wrap: wrap;
       justify-content: space-between;
+      margin: 0 $space-base*4;
       //box-shadow: 0px -1px 18px -7px rgba(66, 68, 90, 1);
     }
 
@@ -32,6 +44,7 @@
       background-image: none !important;
       justify-content: center;
     }
+
   }
 
   .header__info {
@@ -51,7 +64,7 @@
     }
 
     @include mobile {
-      padding: $space-base*4 10% $space-base*4;
+      padding: $space-base*4;
     }
 
     a:not(:last-child) {

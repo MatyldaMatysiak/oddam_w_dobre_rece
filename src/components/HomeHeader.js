@@ -10,10 +10,13 @@ export default function HomeHeader({ userData, setUserData }) {
     console.log(userData.email)
     return (
         <header className="headerContainer">
-            <div className="navBox">
-                {userData.email === "" ? <LoginRegister/> : <LoggedUserUpperNav userEmail={userData.email} setUserData={setUserData}/>}
-                <Navigation/>
+            <div className="shadow__container">
+                <div className="navBox">
+                    {userData.email === "" ? <LoginRegister/> : <LoggedUserUpperNav userEmail={userData.email} setUserData={setUserData}/>}
+                    <Navigation/>
+                </div>
             </div>
+
             <div className="heroContainer" style={{ backgroundImage: `url(${heroImage})` }}>
                 <div className="header__info">
                     <h2 className="welcome-text">Zacznij pomagać!<br/>Oddaj niechciane rzeczy w zaufane ręce</h2>
