@@ -5,9 +5,25 @@
   background-size: cover;
   background-repeat: no-repeat;
 
+  @include small {
+    flex-direction: column;
+    background-image: none !important;
+    background-color: $color-yellow;
+    align-items: center;
+    padding: 7%;
+  }
+
   .threeColumns__column {
     width: 25%;
     text-align: center;
+
+    @include small {
+      width: 90%;
+
+      &:not(:last-child) {
+        margin-bottom: $space-base*2;
+      }
+    }
 
     .column__number {
       font-weight: 300;

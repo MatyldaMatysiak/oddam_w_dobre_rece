@@ -18,7 +18,7 @@ export default function Navigation() {
         <>
             <button className="btn btn-active menu-toggle" onClick={handleToggleMenu}>Menu</button>
             <nav className={`mainNav ${toggleMenu ? "" : "active"}`}>
-                <HashLink to="/">
+                <HashLink to="/" onClick={handleCloseMenu}>
                     <button className="btn btn-active" onBlur={handleCloseMenu}>Start</button>
                 </HashLink>
                 <HashLink to="/#simpleSteps" duration={500}>

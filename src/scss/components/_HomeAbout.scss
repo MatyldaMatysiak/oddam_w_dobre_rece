@@ -41,7 +41,9 @@
         font-size: 1.75rem;
       }
 
-
+      @include small {
+        font-size: 1.5rem;
+      }
     }
 
     .aboutText__signature {
@@ -62,6 +64,10 @@
     @include medium {
       height: 500px;
       background-position: initial;
+    }
+
+    @include small {
+      height: 350px;
     }
   }
 }

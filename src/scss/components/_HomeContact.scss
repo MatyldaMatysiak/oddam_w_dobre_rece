@@ -103,9 +103,18 @@
       display: flex;
       justify-content: end;
 
+      @include small {
+        justify-content: start;
+        width: 70%;
+      }
+
       .footer__copyright {
         transform: translateX(50%);
         font-size: 1.125rem;
+
+        @include small {
+          transform: translateX(0);
+        }
       }
     }
     .footer__socialMedia {

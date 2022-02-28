@@ -30,6 +30,10 @@
       width: 100%;
       text-align: start;
       border-color: transparent;
+
+      @include medium {
+        text-align: center;
+      }
     }
   }
 
@@ -41,5 +45,7 @@
     }
   }
 
-
+  @include medium {
+    width: 100%;
+  }
 }

@@ -4,6 +4,10 @@
   align-items: center;
   font-family: $font-alt;
 
+  @include small {
+    flex-direction: column;
+  }
+
 
   &:not(:last-child) {
     border-bottom: 1px solid $color-border;
@@ -14,6 +18,12 @@
   .organisation__description {
     text-align: start;
     margin-right: $space-base*2;
+
+    @include small {
+      text-align: center;
+      margin-right: 0;
+      margin-bottom: $space-base;
+    }
 
     .description__title {
       font-size: 1.625rem;
@@ -31,5 +41,9 @@
     font-size: 1.125rem;
     font-weight: 300;
     text-align: end;
+
+    @include small {
+      text-align: center;
+    }
   }
 }

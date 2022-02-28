@@ -43,8 +43,16 @@
       padding: $space-base*10 10% $space-base*15;
     }
 
+    @include small {
+      padding: $space-base*6 10% $space-base*6;
+    }
+
     a:not(:last-child) {
       margin-right: 5%;
+
+      @include small {
+        margin-right: 0;
+      }
     }
 
     .welcome-text {
@@ -57,10 +65,38 @@
       margin: 0 auto $space-base*5;
     }
 
-    button {
-      width: 45%;
-      min-width: fit-content;
+    .buttonsBox {
+      display: flex;
+      justify-content: space-between;
+
+      @include small {
+        flex-direction: column;
+
+      }
+
+      a {
+        width: 45%;
+        display: flex;
+
+        @include small {
+          width: 100%;
+        }
+
+        button {
+          width: 100%;
+
+          @include small {
+            width: 100%;
+            margin-bottom: $space-base*2;
+
+          }
+      }
     }
+
+
+    }
+
+
   }
 
 }

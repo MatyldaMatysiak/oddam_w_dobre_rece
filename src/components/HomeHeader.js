@@ -18,17 +18,18 @@ export default function HomeHeader({ userData, setUserData }) {
                 <div className="header__info">
                     <h2 className="welcome-text">Zacznij pomagać!<br/>Oddaj niechciane rzeczy w zaufane ręce</h2>
                     <img className="separator" src={separator} alt="separator"/>
-                    {userData.email === "" ? <Link to="/logowanie">
-                        <button className="btn btn-active btn-big">ODDAJ<br/>RZECZY</button>
-                    </Link> : <Link to="/oddaj-rzeczy/krok-1">
-                        <button className="btn btn-active btn-big">ODDAJ<br/>RZECZY</button>
-                    </Link>}
-                    {userData.email === "" ? <Link to="/logowanie">
-                            <button className="btn btn-active btn-big">ZORGANIZUJ<br/>ZBIÓRKĘ</button>
+                    <div className="buttonsBox">
+                        {userData.email === "" ? <Link to="/logowanie">
+                            <button className="btn btn-active btn-big">ODDAJ RZECZY</button>
+                        </Link> : <Link to="/oddaj-rzeczy/krok-1">
+                            <button className="btn btn-active btn-big">ODDAJ RZECZY</button>
+                        </Link>}
+                        {userData.email === "" ? <Link to="/logowanie">
+                            <button className="btn btn-active btn-big">ZORGANIZUJ ZBIÓRKĘ</button>
                         </Link> : <Link to="/">
-                        <button className="btn btn-active btn-big">ZORGANIZUJ<br/>ZBIÓRKĘ</button>
-                    </Link>}
-
+                            <button className="btn btn-active btn-big">ZORGANIZUJ ZBIÓRKĘ</button>
+                        </Link>}
+                    </div>
                 </div>
             </div>
 

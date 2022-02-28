@@ -1,9 +1,10 @@
 .simpleSteps {
-  padding: 4% 0;
+  padding: 7% 0;
   text-align: center;
 
   .simpleSteps__title {
     font-size: 2.376rem;
+    padding: 0 $space-base*2;
   }
 
   .separator {
@@ -16,6 +17,11 @@
     background-color: $color-bg;
     padding: 3%;
     margin-bottom: $space-base*3;
+
+    @include small {
+      flex-direction: column;
+      padding: 7%;
+    }
 
 
     .fourSteps__step {
@@ -30,21 +36,51 @@
         width: 18%;
       }
 
+      @include small {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+      }
+
       &:not(:last-child) {
         margin-right: 7%;
 
         @include medium {
           margin-right: 5%;
         }
+
+        @include small {
+          margin: 0 auto $space-base*2;
+        }
       }
 
       .step__icon {
         margin: 0 auto $space-base;
 
+        @include small {
+          margin: 0 $space-base*3 0 0;
+        }
+
+      }
+
+      @include small {
+        .step__text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 60%;
+        }
       }
 
       .step__title {
         font-size: 1.125rem;
+
+        @include small {
+          margin-bottom: $space-base/2;
+          font-size: 1.275rem;
+        }
 
         &::after {
           display: block;
@@ -53,6 +89,10 @@
           background-color: #707070;
           width: 40%;
           margin: $space-base auto;
+
+          @include small {
+            display: none;
+          }
         }
       }
     }
@@ -69,6 +109,10 @@
 
     @include  medium {
       width: 30%;
+    }
+
+    @include small {
+      width: 40%;
     }
   }
 }
