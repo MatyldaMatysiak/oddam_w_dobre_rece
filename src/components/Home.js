@@ -11,7 +11,7 @@ export default function Home({ userData, setUserData }) {
         <>
             <HomeHeader userData={userData} setUserData={setUserData}/>
             <HomeThreeColumns/>
-            <HomeSimpleSteps/>
+            <HomeSimpleSteps userData={userData}/>
             <HomeAbout/>
             <HomeWhoWeHelp/>
             <HomeContact/>

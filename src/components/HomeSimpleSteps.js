@@ -1,12 +1,12 @@
 import React from "react";
 import separator from "../assets/Decoration.svg"
-import {Link} from "react-router-dom";
 import TshirtIcon from "../assets/Icon-1.svg";
 import BagIcon from "../assets/Icon-2.svg";
 import Loupe from "../assets/Icon-3.svg";
 import Courier from "../assets/Icon-4.svg";
+import {HashLink} from "react-router-hash-link";
 
-export default function HomeSimpleSteps() {
+export default function HomeSimpleSteps({ userData }) {
     return (
         <section className="simpleSteps" id="simpleSteps">
             <h2 className="simpleSteps__title">Wystarczą 4 proste kroki</h2>
@@ -41,9 +41,10 @@ export default function HomeSimpleSteps() {
                     </div>
                 </div>
             </div>
-            <Link to="/logowanie">
+            {}
+            <HashLink to={userData === "" ? "/logowanie" : "/oddaj-rzeczy/krok-1#top"}>
                 <button className="btn btn-active btn-big">ODDAJ<br/>RZECZY</button>
-            </Link>
+            </HashLink>
         </section>
     )
 }
