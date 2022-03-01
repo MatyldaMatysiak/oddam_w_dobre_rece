@@ -35,7 +35,7 @@ const stepOneArray = [
 
 const whoToHelp = ["dzieciom", "samotnym matkom", "bezdomnym", "niepełnosprawnym", "osobom starszym"]
 
-export default function GiveAwayForm() {
+export default function GiveAwayForm({ userEmail }) {
 
     const [stepOne, setStepOne] = useState(stepOneArray[0].value);
     const [stepTwo, setStepTwo] = useState("--wybierz--");
@@ -58,6 +58,7 @@ export default function GiveAwayForm() {
 
     const sendForm = async () => {
         const form = {
+            user: userEmail,
             thingsToGive: stepOne,
             bags: stepTwo,
             whoToGive: stepThree,
@@ -65,7 +66,7 @@ export default function GiveAwayForm() {
         }
         console.log(form);
         try {
-            const docRef = await addDoc(collection(db, "giveAwayForms"), form);
+            await addDoc(collection(db, "giveAwayForms"), form);
             console.log("Document written saved");
             setStepOne(stepOneArray[0].value);
             setStepTwo("--wybierz--");
@@ -73,7 +74,6 @@ export default function GiveAwayForm() {
                 location: "--wybierz--",
                 whoHelp: [],
                 organizationName: ""
-
             })
             setStepFour({
                 street: "",

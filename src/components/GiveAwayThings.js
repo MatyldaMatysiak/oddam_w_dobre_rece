@@ -9,7 +9,7 @@ export default function GiveAwayThings({ userData, setUserData }) {
     return (
         <>
             <GiveAwayHeader userData={userData} setUserData={setUserData} startNotActive={startNotActive}/>
-            <GiveAwayForm />
+            <GiveAwayForm userEmail={userData.email}/>
             <HomeContact />
         </>
     )
