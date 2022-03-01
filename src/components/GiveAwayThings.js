@@ -3,8 +3,8 @@ import HomeContact from "./HomeContact";
 import GiveAwayForm from "./GiveAwayForm";
 import GiveAwayHeader from "./GiveAwayHeader";
 
-export default function GiveAwayThings({ userData, setUserData }) {
-    const [startNotActive] = useState(true)
+export default function GiveAwayThings({ userData, setUserData, startNotActive }) {
+
 
     return (
         <>

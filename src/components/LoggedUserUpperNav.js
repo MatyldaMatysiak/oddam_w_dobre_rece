@@ -36,7 +36,7 @@ export default function LoggedUserUpperNav({ userEmail, setUserData }) {
         <>
             <button className="btn btn-active btn-yellow menu-toggle" onClick={handleToggleMenu}>Profil</button>
             <div className={`loginRegisterBox loggedUser ${toggleMenu ? "" : "active"}`} onClick={handleCloseMenu}>
-                <Link to="/">
+                <Link to="/panel">
                     <button className="btn loggedUser__email">{userEmail}</button>
                 </Link>
                 <Link to="/oddaj-rzeczy/krok-1">

@@ -7,19 +7,27 @@ import Logout from "./components/Logout";
 import GiveAwayThings from "./components/GiveAwayThings";
 import {auth} from "./firebaseConfig";
 import {onAuthStateChanged} from "firebase/auth";
+import UserPanel from "./components/UserPanel";
 
 function App() {
     const [userData, setUserData] = useState({
         email: ""
     });
 
+    console.log(userData)
+
+    const [startNotActive] = useState(true)
+
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
+                console.log(user)
                 setUserData(prev => {
                     return {
-                        ...prev,
-                        email: user.email
+                        name: user.displayName,
+                        email: user.email,
+                        photoURL: user.photoURL,
+                        uid: user.uid
                     }
                 })
             } else {
@@ -41,7 +49,8 @@ function App() {
                 <Route path="/rejestracja" element={<SignUpView setUserData={setUserData}/>}/>
                 <Route path="/wylogowano" element={<Logout/>}/>
                 <Route path="/oddaj-rzeczy/*"
-                       element={<GiveAwayThings userData={userData} setUserData={setUserData}/>}/>
+                       element={<GiveAwayThings userData={userData} setUserData={setUserData} startNotActive={startNotActive}/>}/>
+                <Route path="/panel" element={<UserPanel userData={userData} setUserData={setUserData} startNotActive={startNotActive}/>}/>
             </Routes>
         </Router>
     );
