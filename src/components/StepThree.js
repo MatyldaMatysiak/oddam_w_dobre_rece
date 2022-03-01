@@ -13,6 +13,8 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
     const [input, setInput] = useState(stepThree.organizationName);
     const [validation, setValidation] = useState({location: true, whoToHelp: true})
 
+    console.log(stepThree.whoHelp)
+
     const handleShowSelect = () => {
         if (options === "hide") {
             setImgSrc(arrowUp);
@@ -45,7 +47,8 @@ export default function StepThree({bg, stepThree, setStepThree, whoToHelp}) {
     const handleCheckbox = (e) => {
         if (stepThree.whoHelp.includes(e.target.innerText)) {
             let newWhoHelp = [...stepThree.whoHelp];
-            newWhoHelp.splice(newWhoHelp.indexOf(e.target.innerText, 1));
+            console.log(newWhoHelp.indexOf(e.target.innerText))
+            newWhoHelp.splice(newWhoHelp.indexOf(e.target.innerText), 1);
             setStepThree(prev => {
                 return {
                     ...prev,
