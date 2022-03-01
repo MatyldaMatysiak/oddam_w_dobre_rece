@@ -6,13 +6,13 @@ import heroImage from "../assets/Form-Hero-Image.jpg"
 import {Link} from "react-router-dom";
 import LoggedUserUpperNav from "./LoggedUserUpperNav";
 
-export default function GiveAwayHeader({ userData, setUserData }) {
+export default function GiveAwayHeader({ userData, setUserData, startNotActive }) {
     return (
         <header className="headerContainer giveAwayHeader">
             <div className="shadow__container">
                 <div className="navBox">
                     <LoggedUserUpperNav userEmail={userData.email} setUserData={setUserData}/>
-                    <Navigation/>
+                    <Navigation startNotActive={startNotActive}/>
                 </div>
             </div>
 

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Link} from "react-scroll";
 import {HashLink} from "react-router-hash-link";
 
-export default function Navigation() {
+export default function Navigation({ startNotActive }) {
 
     const [toggleMenu, setToggleMenu] = useState(true)
 
@@ -19,7 +19,7 @@ export default function Navigation() {
             <button className="btn btn-active menu-toggle" onClick={handleToggleMenu}>Menu</button>
             <nav className={`mainNav ${toggleMenu ? "" : "active"}`}>
                 <HashLink to="/" onClick={handleCloseMenu}>
-                    <button className="btn btn-active" onBlur={handleCloseMenu}>Start</button>
+                    <button className={`btn ${startNotActive ? "" : "btn-active"}`} onBlur={handleCloseMenu}>Start</button>
                 </HashLink>
                 <HashLink to="/#simpleSteps" duration={500}>
                     <button className="btn" onBlur={handleCloseMenu}>O co chodzi?</button>

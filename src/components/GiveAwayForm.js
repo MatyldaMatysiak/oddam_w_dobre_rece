@@ -62,6 +62,8 @@ export default function GiveAwayForm() {
             pickUpData: stepFour
         }
         console.log(form);
+
+
     }
 
     return (
@@ -72,7 +74,13 @@ export default function GiveAwayForm() {
                     <Route path="krok-2" element={ <StepTwo bg={bg} setStepTwo={setStepTwo} stepTwo={stepTwo}/> } />
                     <Route path="krok-3" element={ <StepThree bg={bg} setStepThree={setStepThree} stepThree={stepThree} whoToHelp={whoToHelp}/> } />
                     <Route path="krok-4" element={ <StepFour bg={bg} setStepFour={setStepFour} stepFour={stepFour}/> } />
-                    <Route path="podsumowanie" element={ <Summary bg={bg} stepOne={stepOne} stepTwo={stepTwo} stepThree={stepThree} stepFour={stepFour} sendForm={sendForm}/> } />
+                    <Route path="podsumowanie"
+                           element={ <Summary bg={bg}
+                                              stepOne={stepOne}
+                                              stepTwo={stepTwo}
+                                              stepThree={stepThree}
+                                              stepFour={stepFour}
+                                              sendForm={sendForm}/> } />
                     <Route path="podziekowanie" element={ <Thanks bg={bg}/> } />
                 </Routes>
             </section>
