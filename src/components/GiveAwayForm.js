@@ -7,6 +7,8 @@ import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import Summary from "./Summary";
 import Thanks from "./Thanks";
+import {db} from "../firebaseConfig";
+import { addDoc, collection } from "firebase/firestore";
 
 const stepOneArray = [
     {
@@ -54,7 +56,7 @@ export default function GiveAwayForm() {
         comments: ""
     })
 
-    const sendForm = () => {
+    const sendForm = async () => {
         const form = {
             thingsToGive: stepOne,
             bags: stepTwo,
@@ -62,7 +64,29 @@ export default function GiveAwayForm() {
             pickUpData: stepFour
         }
         console.log(form);
+        try {
+            const docRef = await addDoc(collection(db, "giveAwayForms"), form);
+            console.log("Document written saved");
+            setStepOne(stepOneArray[0].value);
+            setStepTwo("--wybierz--");
+            setStepThree({
+                location: "--wybierz--",
+                whoHelp: [],
+                organizationName: ""
 
+            })
+            setStepFour({
+                street: "",
+                city: "",
+                postalCode: "",
+                phoneNumber: "",
+                day: "",
+                hour: "",
+                comments: ""
+            })
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
 
     }
 
