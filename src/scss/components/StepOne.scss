@@ -4,6 +4,16 @@
   flex-direction: column;
   justify-content: space-between;
 
+  @include small {
+    padding: $space-base*3 7%;
+  }
+
+  .stepTwo__form {
+    margin-bottom: $space-base*10;
+
+
+  }
+
   .stepTwo__validationText {
     font-size: 1.25rem;
     font-weight: 400;
@@ -20,6 +30,14 @@
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: $space-base*5;
+
+    @include desktop {
+      margin-bottom: $space-base*4;
+    }
+
+    @include small {
+      margin-bottom: $space-base*3;
+    }
   }
 
   .form__title,
@@ -27,8 +45,12 @@
     font-size: 2.25rem;
     font-weight: 600;
     margin-bottom: $space-base*2;
-  }
+    width: 70%;
 
+    @include desktop {
+      width: 100%;
+    }
+  }
 
   .stepTwo__select,
   .stepThree__select {
@@ -69,6 +91,19 @@
         text-align: center;
         right: 0;
         top: 3rem;
+        background-color: $color-bg;
+
+        @include medium {
+          width: 40%;
+        }
+
+        @include small {
+          width: 50%;
+        }
+
+        @include mobile {
+          width: 100%;
+        }
 
         .options_option {
           cursor: pointer;
@@ -95,7 +130,16 @@
     }
   }
 
+  .stepTwo__select {
+    @include mobile {
+      flex-direction: column;
+      align-items: start;
 
+      .form__label {
+        margin-bottom: $space-base;
+      }
+    }
+  }
 
   .form__option {
     margin: $space-base*3 0;
@@ -116,6 +160,8 @@
       border: 1px solid $color-border;
       cursor: pointer;
       margin: 0;
+      padding: 0;
+      flex-shrink: 0;
 
       &:checked {
         background-color: $color-yellow;
@@ -124,6 +170,13 @@
   }
 
   .buttonBox {
+
+    @include small {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    margin-top: $space-base*2;
 
     a:not(:last-child) {
       margin-right: 3%;

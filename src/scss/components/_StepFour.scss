@@ -1,18 +1,39 @@
 .stepFour__form {
 
+  @include medium {
+    margin-bottom: $space-base;
+  }
+
   .form__title {
     margin-bottom: $space-base*3;
+    width: 70%;
+
+    @include desktop {
+      width: 100%;
+    }
   }
 
   .form__data {
     display: flex;
     justify-content: space-between;
     width: 63%;
-    margin-bottom: $space-base*3;
+
+    @include desktop {
+      width: 100%;
+    }
+
+    @include medium {
+      flex-direction: column;
+    }
 
     .data__address,
     .data__date {
       width: 45%;
+
+      @include medium {
+        width: 100%;
+      }
+
 
       .address__title,
       .date__title {
@@ -28,11 +49,21 @@
         align-items: center;
         padding-bottom: $space-base/2;
 
+        @include mobile {
+          flex-direction: column;
+          align-items: start;
+        }
+
         .verse__title {
           margin: 0 5% 0 0;
           font-weight: 300;
           font-size: 1.5rem;
           width: 30%;
+
+          @include mobile {
+            width: 100%;
+            margin: 0;
+          }
         }
 
         .verse__input {
@@ -41,6 +72,15 @@
           font-size: 1.5rem;
           width: 65%;
           font-weight: 300;
+          background-color: $color-bg;
+
+          @include desktop {
+            background-color: $color-white;
+          }
+
+          @include mobile {
+            width: 100%;
+          }
 
           &.invalid {
             border-color: red;
@@ -54,6 +94,10 @@
         color: red;
         margin: 0 0 $space-base*1.5 0;
         visibility: hidden;
+
+        @include mobile {
+          margin-bottom: $space-base/2;
+        }
 
         &.visible {
           visibility: visible;

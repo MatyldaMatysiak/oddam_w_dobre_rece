@@ -13,7 +13,23 @@
       background-color: #ececec;
       z-index: 10;
     }
+
+    @include small {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding-bottom: $space-base;
+
+      .stepThree__validationText {
+        margin-top: $space-base;
+      }
+    }
+
+    @include mobile {
+      width: 100%;
+    }
   }
+
 
   .form__checkbox {
     margin-top: $space-base;
@@ -33,6 +49,10 @@
       flex-wrap: wrap;
       width: 50%;
 
+      @include desktop {
+        width: 100%;
+      }
+
       .options__option {
         border: 1px solid $color-border;
         padding: $space-base $space-base*1.5;
@@ -42,9 +62,16 @@
         display: flex;
         align-items: stretch;
 
+        @include mobile {
+          width: 100%;
+        }
+
         &:not(:last-child) {
           margin-right: $space-base*2;
 
+          @include mobile {
+            margin-right: 0;
+          }
         }
 
         &.option-yellow {
@@ -64,6 +91,10 @@
     margin: 0;
     visibility: hidden;
 
+    @include small {
+      position: relative;
+    }
+
     &.visible {
       visibility: visible;
     }
@@ -74,7 +105,15 @@
     flex-direction: column;
     width: 40%;
     font-size: 1.5rem;
-    margin-bottom: $space-base*7;
+    margin-bottom: $space-base*3;
+
+    @include medium {
+      width: 90%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
 
     .organizationName__title {
       font-size: 1.5rem;

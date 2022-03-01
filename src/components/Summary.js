@@ -35,34 +35,34 @@ export default function Summary({bg, stepOne, stepTwo, stepThree, stepFour, send
                         <div className="pickUp__address">
                             <h3 className="address__title">Adres odbioru:</h3>
                             <div className="address__details">
-                                <p className="details__name">Ulica</p>
+                                <p className="details__name">Ulica:</p>
                                 <p className="details__content">{stepFour.street}</p>
                             </div>
                             <div className="address__details">
-                                <p className="details__name">Miasto</p>
+                                <p className="details__name">Miasto:</p>
                                 <p className="details__content">{stepFour.city}</p>
                             </div>
                             <div className="address__details">
-                                <p className="details__name">Kod<br/>pocztowy</p>
+                                <p className="details__name">Kod<br/>pocztowy:</p>
                                 <p className="details__content">{stepFour.postalCode}</p>
                             </div>
                             <div className="address__details">
-                                <p className="details__name">Numer<br/>telefonu</p>
+                                <p className="details__name">Numer<br/>telefonu:</p>
                                 <p className="details__content">{stepFour.phoneNumber}</p>
                             </div>
                         </div>
                         <div className="pickUp__date">
                             <h3 className="date__title">Termin odbioru:</h3>
                             <div className="date__details">
-                                <p className="details__name">Data</p>
+                                <p className="details__name">Data:</p>
                                 <p className="details__content">{stepFour.day}</p>
                             </div>
                             <div className="address__details">
-                                <p className="details__name">Godzina</p>
+                                <p className="details__name">Godzina:</p>
                                 <p className="details__content">{stepFour.hour}</p>
                             </div>
                             <div className="address__details">
-                                <p className="details__name">Uwagi<br/>dla kuriera</p>
+                                <p className="details__name">Uwagi<br/>dla kuriera:</p>
                                 <p className="details__content">{stepFour.comments}</p>
                             </div>
                         </div>

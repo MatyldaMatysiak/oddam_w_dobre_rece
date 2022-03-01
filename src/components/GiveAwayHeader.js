@@ -9,10 +9,13 @@ import LoggedUserUpperNav from "./LoggedUserUpperNav";
 export default function GiveAwayHeader({ userData, setUserData }) {
     return (
         <header className="headerContainer giveAwayHeader">
-            <div className="navBox">
-                <LoggedUserUpperNav userEmail={userData.email} setUserData={setUserData}/>
-                <Navigation/>
+            <div className="shadow__container">
+                <div className="navBox">
+                    <LoggedUserUpperNav userEmail={userData.email} setUserData={setUserData}/>
+                    <Navigation/>
+                </div>
             </div>
+
             <div className="heroContainer" style={{ backgroundImage: `url(${heroImage})` }}>
                 <div className="header__info">
                     <h2 className="welcome-text">Oddaj rzeczy, których już nie chcesz<br/>POTRZEBUJĄCYM</h2>
@@ -35,7 +38,7 @@ export default function GiveAwayHeader({ userData, setUserData }) {
                         </div>
                         <div className="step__square">
                             <h4 className="step__number">3</h4>
-                            <p className="step__text">Wybierz fundację</p>
+                            <p className="step__text">Wybierz<br/>fundację</p>
                             <div className="step__rotate">
 
                             </div>

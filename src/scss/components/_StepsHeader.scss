@@ -2,6 +2,14 @@
   background-color: $color-yellow;
   padding: 2% 7%;
 
+  @include medium {
+    padding: 3% 7%;
+  }
+
+  @include small {
+    padding: 4% 7%;
+  }
+
   .stepsHeader__title {
     font-size: 2.25rem;
     font-weight: 600;

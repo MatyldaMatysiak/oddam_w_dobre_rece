@@ -182,12 +182,12 @@ export default function StepFour({bg, stepFour, setStepFour}) {
                             </div>
                             <p className={`stepFour__validationText ${validation.city ? "" : "visible"}`}>Nazwa miasta musi mieć conajmniej 2 znaki!</p>
                             <div className="address__verse">
-                                <label htmlFor="postalCode" className="verse__title">Kod<br/>pocztowy</label>
+                                <label htmlFor="postalCode" className="verse__title">Kod pocztowy</label>
                                 <input type="text" id="postalCode" name="postalCode" className={`verse__input ${validation.postalCode ? "" : "invalid"}`} value={form.postalCode} onChange={handleUpdateForm}/>
                             </div>
                             <p className={`stepFour__validationText ${validation.postalCode ? "" : "visible"}`}>Kod pocztowy musi mieć poprawny format np. 12-345!</p>
                             <div className="address__verse">
-                                <label htmlFor="phoneNumber" className="verse__title">Numer<br/>telefonu</label>
+                                <label htmlFor="phoneNumber" className="verse__title">Numer telefonu</label>
                                 <input type="number" id="phoneNumber" name="phoneNumber" className={`verse__input ${validation.phoneNumber ? "" : "invalid"}`} value={form.phoneNumber} onChange={handleUpdateForm}/>
                             </div>
                             <p className={`stepFour__validationText ${validation.phoneNumber ? "" : "visible"}`}>Poprawny nr telefonu musi mieć 9 znaków!</p>
@@ -205,7 +205,7 @@ export default function StepFour({bg, stepFour, setStepFour}) {
                             </div>
                             <p className={`stepFour__validationText ${validation.hour ? "" : "visible"}`}>Wpisz godzinę w poprawnym formacie np. 13:00!</p>
                             <div className="date__verse">
-                                <label htmlFor="comments" className="verse__title">Uwagi<br/>dla kuriera</label>
+                                <label htmlFor="comments" className="verse__title">Uwagi dla kuriera</label>
                                 <textarea id="comments" name="comments" className="verse__input" rows="4" value={form.comments} onChange={handleUpdateForm}/></div>
                         </div>
                     </div>

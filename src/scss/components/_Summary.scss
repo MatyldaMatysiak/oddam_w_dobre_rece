@@ -1,4 +1,7 @@
 .summary {
+  @include desktop {
+    background-color: $color-yellow;
+  }
 
   .summary__title {
     margin-bottom: $space-base*3;
@@ -11,11 +14,17 @@
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: $space-base*2;
+
+
     }
 
     .giveAway__details {
       margin-bottom: $space-base*2;
       width: 70%;
+
+      @include desktop {
+        width: 100%;
+      }
 
       .details__verse {
         display: flex;
@@ -39,10 +48,27 @@
     width: 65%;
     justify-content: space-between;
 
+    @include desktop {
+      width: 100%;
+    }
+
+    @include small {
+      flex-direction: column;
+    }
+
     .pickUp__address,
     .pickUp__date {
       margin-bottom: $space-base*4;
       width: 40%;
+
+      @include medium {
+        width: 49%;
+        margin-bottom: $space-base*2;
+      }
+
+      @include small {
+        width: 100%;
+      }
 
       .address__title,
       .date__title {
@@ -61,13 +87,14 @@
         min-width: fit-content;
 
         .details__name {
-          width: 30%;
+          width: 25%;
           min-width: 120px;
-          margin-right: 10%;
+          margin-right: 5%;
         }
 
         .details__content {
-          width: 60%;
+          width: 70%;
+          overflow: hidden;
         }
       }
     }

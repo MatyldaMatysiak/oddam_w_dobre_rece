@@ -3,6 +3,22 @@
     .header__info {
       padding: $space-base*25 $space-base*15 $space-base*17;
 
+      @include desktop {
+        padding: $space-base*12 10% $space-base*15;
+      }
+
+      @include medium {
+        padding: $space-base*10 10% $space-base*10;
+      }
+
+      @include small {
+        padding: $space-base*7 10% $space-base*7;
+      }
+
+      @include mobile {
+        padding: $space-base*4 $space-base*4 $space-base*5;
+      }
+
       .separator {
         margin-bottom: $space-base*2;
       }
@@ -18,6 +34,11 @@
         display: flex;
         width: 100%;
         justify-content: center;
+
+        @include small {
+          flex-direction: column;
+          align-items: center;
+        }
       }
 
       .step__square {
@@ -25,19 +46,63 @@
         width: 9.375rem;
         height: 9.375rem;
 
+        @include medium {
+          width: 8rem;
+          height: 8rem;
+        }
+
+        @include small {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: auto;
+          width: 70%;
+          padding: $space-base $space-base*2;
+          background-color: $color-bg;
+        }
+
+        @include mobile {
+          width: 85%;
+        }
+
         &:not(:last-child) {
           margin-right: $space-base*2.5;
+
+          @include medium {
+            margin-right: $space-base*2;
+          }
+
+          @include small {
+            margin-right: 0;
+            margin-bottom: $space-base*2;
+          }
+
         }
+
+
 
         .step__number {
           font-size: 2rem;
           font-weight: 300;
           margin-bottom: $space-base;
+
+          @include medium {
+            margin-bottom: 0;
+          }
+
+          @include small {
+            width: 20%;
+          }
         }
 
         .step__text {
           font-size: 1.375rem;
           font-weight: 300;
+
+          @include small {
+            width: 60%;
+            text-align: center;
+          }
         }
 
         .step__rotate {
@@ -47,6 +112,15 @@
           border: 1px solid $color-border;
           position: absolute;
           top: 0;
+
+          @include medium {
+            width: 8rem;
+            height: 8rem;
+          }
+
+          @include small {
+            display: none;
+          }
         }
 
       }
