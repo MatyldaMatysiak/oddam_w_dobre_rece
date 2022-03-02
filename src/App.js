@@ -14,14 +14,11 @@ function App() {
         email: ""
     });
 
-    console.log(userData)
-
     const [startNotActive] = useState(true)
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                console.log(user)
                 setUserData(prev => {
                     return {
                         name: user.displayName,
@@ -45,9 +42,9 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/*" element={<Home userData={userData} setUserData={setUserData}/>}/>
-                <Route path="/logowanie" element={<LoginView setUserData={setUserData}/>}/>
-                <Route path="/rejestracja" element={<SignUpView setUserData={setUserData}/>}/>
-                <Route path="/wylogowano" element={<Logout/>}/>
+                <Route path="/logowanie" element={<LoginView setUserData={setUserData} startNotActive={startNotActive}/>}/>
+                <Route path="/rejestracja" element={<SignUpView setUserData={setUserData} startNotActive={startNotActive}/>}/>
+                <Route path="/wylogowano" element={<Logout startNotActive={startNotActive}/>}/>
                 <Route path="/oddaj-rzeczy/*"
                        element={<GiveAwayThings userData={userData} setUserData={setUserData} startNotActive={startNotActive}/>}/>
                 <Route path="/panel" element={<UserPanel userData={userData} setUserData={setUserData} startNotActive={startNotActive}/>}/>

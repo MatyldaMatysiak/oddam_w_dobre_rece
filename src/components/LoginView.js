@@ -7,7 +7,7 @@ import {HashLink} from "react-router-hash-link";
 import {auth} from "../firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth"
 
-export default function LoginView({ setUserData }) {
+export default function LoginView({ setUserData, startNotActive }) {
     let navigate = useNavigate();
     const [loader, setLoader] = useState("loading")
     const [email, setEmail] = useState("");
@@ -54,7 +54,7 @@ export default function LoginView({ setUserData }) {
             <div className="shadow__container">
                 <div className="loginRegister__navBox">
                     <LoginRegister/>
-                    <Navigation/>
+                    <Navigation startNotActive={startNotActive}/>
                 </div>
             </div>
             <form className="loginRegister__form" onSubmit={handleSubmit}>

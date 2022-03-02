@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import separator from "../assets/Decoration.svg";
 import {HashLink} from "react-router-hash-link";
 
-export default function Logout() {
+export default function Logout({ startNotActive}) {
     const [loader, setLoader] = useState("loading")
 
     return (
@@ -12,7 +12,7 @@ export default function Logout() {
             <div className="shadow__container">
                 <div className="loginRegister__navBox">
                     <LoginRegister/>
-                    <Navigation/>
+                    <Navigation startNotActive={startNotActive}/>
                 </div>
             </div>
             <form className="loginRegister__form">

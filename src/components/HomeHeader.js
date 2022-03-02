@@ -8,7 +8,7 @@ import LoggedUserUpperNav from "./LoggedUserUpperNav";
 import {HashLink} from "react-router-hash-link";
 
 export default function HomeHeader({ userData, setUserData }) {
-    console.log(userData.email)
+
     return (
         <header className="headerContainer" id="header">
             <div className="shadow__container">

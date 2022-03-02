@@ -7,7 +7,7 @@ import {auth} from "../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import {useNavigate} from "react-router-dom";
 
-export default function SignUpView({ setUserData }) {
+export default function SignUpView({ setUserData, startNotActive }) {
     let navigate = useNavigate();
     const [loader, setLoader] = useState("loading")
     const [email, setEmail] = useState("");
@@ -59,7 +59,7 @@ export default function SignUpView({ setUserData }) {
             <div className="shadow__container">
                 <div className="loginRegister__navBox">
                     <LoginRegister/>
-                    <Navigation/>
+                    <Navigation startNotActive={startNotActive}/>
                 </div>
             </div>
             <form className="loginRegister__form" onSubmit={handleSubmit}>

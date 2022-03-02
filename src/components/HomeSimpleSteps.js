@@ -42,7 +42,7 @@ export default function HomeSimpleSteps({ userData }) {
                 </div>
             </div>
             {}
-            <HashLink to={userData === "" ? "/logowanie" : "/oddaj-rzeczy/krok-1#top"}>
+            <HashLink to={userData.email === "" ? "/logowanie" : "/oddaj-rzeczy/krok-1#top"}>
                 <button className="btn btn-active btn-big">ODDAJ<br/>RZECZY</button>
             </HashLink>
         </section>
