@@ -36,8 +36,6 @@ export default function HomeHeader({ userData, setUserData }) {
                     </div>
                 </div>
             </div>
-
-
         </header>
     )
 }
